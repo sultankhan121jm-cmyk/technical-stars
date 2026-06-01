@@ -62,9 +62,13 @@ const Navbar = () => {
 
       <div className="bg-brand-primary">
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-16">
-          {/* Logo Image */}
+           {/* Logo Image */}
           <NavLink to="/" className="flex items-center min-h-[44px]">
-            <img src={logo} alt="Technical Stars Logo" className="h-10 w-auto object-contain" />
+            <img 
+              src={logo} 
+              alt="Technical Stars Logo" 
+              className="h-12 w-auto object-contain p-1" 
+            />
           </NavLink>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
