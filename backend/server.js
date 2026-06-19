@@ -2,6 +2,10 @@
 // IMPORTS (All require statements at the top)
 // ============================================
 
+
+const path = require('path');
+
+
 // Load environment variables from .env file
 const dotenv = require('dotenv');
 dotenv.config();
@@ -73,17 +77,24 @@ app.get('/api/health', (req, res) => {
 app.use('/api/contact', contactRoutes);
 
 
+// ... (All your middleware and routes at the top) ...
+
+// Use Contact Routes
+app.use('/api/contact', contactRoutes);
+
 // ============================================
-// 404 HANDLER
+// SERVE REACT FRONTEND
 // ============================================
 
-app.use((req, res) => {
-    res.status(404).json({
-        success: false,
-        message: `Cannot find ${req.method} ${req.path}`
-    });
+const path = require('path');
+
+// Tell Express to serve files from the "public" folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+// For any route that isn't an API, send the React index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-
 
 // ============================================
 // START THE SERVER
@@ -97,11 +108,5 @@ connectDB().then(() => {
         console.log('🚀 ==========================================');
         console.log(`🚀 Server running on: http://localhost:${PORT}`);
         console.log('🚀 ==========================================');
-        console.log('');
-        console.log('Available routes:');
-        console.log(`   GET  http://localhost:${PORT}/`);
-        console.log(`   GET  http://localhost:${PORT}/api/health`);
-        console.log(`   POST http://localhost:${PORT}/api/contact`);
-        console.log('');
     });
 });

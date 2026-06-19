@@ -1,2 +1,14 @@
-node_modules
+# Dependencies (Don't upload these, they are huge)
+node_modules/
+backend/node_modules/
+
+# Environment Variables (NEVER upload passwords to GitHub!)
 .env
+backend/.env
+
+# Build files
+dist/
+build/
+
+# Logs
+npm-debug.log*
