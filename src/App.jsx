@@ -5,6 +5,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FloatingButtons from "./components/FloatingButtons";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -37,6 +38,7 @@ function App() {
         </Routes>
         <Footer />
         <FloatingButtons />
+        <ScrollToTop />
       </BrowserRouter>
     </LanguageProvider>
   );
