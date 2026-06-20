@@ -21,7 +21,7 @@ const Contact = () => {
       const fullName = `${data.firstName} ${data.lastName}`;
 
       // 2. Send data to your Express backend
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
