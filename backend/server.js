@@ -3,9 +3,6 @@
 // ============================================
 
 
-const path = require('path');
-
-
 // Load environment variables from .env file
 const dotenv = require('dotenv');
 dotenv.config();
