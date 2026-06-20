@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowUp } from "react-icons/fa";
 
 const ScrollToTop = () => {
-  // Track scroll position to determine visibility
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -14,7 +13,6 @@ const ScrollToTop = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Smooth scroll handler
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -24,7 +22,8 @@ const ScrollToTop = () => {
       {visible && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-[140px] right-6 z-50 w-11 h-11 md:w-12 md:h-12 min-w-[44px] min-h-[44px] rounded-full bg-white text-brand-blue border border-gray-200 flex items-center justify-center text-lg hover:bg-brand-blue hover:text-white transition-all duration-200 shadow-lg shadow-black/[0.06]"
+          // Pushed up to 180px to clear the Call & WhatsApp buttons
+          className="fixed bottom-[180px] right-6 z-50 w-11 h-11 md:w-12 md:h-12 min-w-[44px] min-h-[44px] rounded-full bg-white text-brand-navy border border-brand-border flex items-center justify-center text-lg hover:bg-brand-navy hover:text-white hover:border-brand-navy transition-all duration-200 shadow-lg shadow-black/[0.08]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
