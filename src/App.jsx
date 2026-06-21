@@ -11,12 +11,12 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
-import ACRepair from "./pages/services/ACRepair";
-import ACInstallation from "./pages/services/ACInstallation";
-import ACCleaning from "./pages/services/ACCleaning";
-import WashingMachine from "./pages/services/WashingMachine";
-import Plumbing from "./pages/services/Plumbing";
-import Electricity from "./pages/services/Electricity";
+import ACRepair from "./services/ACRepair";
+import ACInstallation from "./services/ACInstallation";
+import ACCleaning from "./services/ACCleaning";
+import WashingMachine from "./services/WashingMachine";
+import Plumbing from "./services/Plumbing";
+import Electricity from "./services/Electricity";
 
 function App() {
   return (
