@@ -82,10 +82,10 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            <a href="tel:+966551895625" className="btn-primary min-h-[54px] w-full sm:w-auto rounded-xl px-8 py-3.5 text-[16px] flex items-center justify-center gap-2.5 font-bold">
+            <a href="tel:+966 556380709" className="btn-primary min-h-[54px] w-full sm:w-auto rounded-xl px-8 py-3.5 text-[16px] flex items-center justify-center gap-2.5 font-bold">
               <FaPhone className="text-[14px]" /> {t("hero.callNow")}
             </a>
-            <a href="https://wa.me/966551895625" target="_blank" rel="noopener noreferrer" className="btn-outline min-h-[54px] w-full sm:w-auto rounded-xl px-8 py-3.5 text-[16px] flex items-center justify-center gap-2.5">
+            <a href="https://wa.me/966556380709" target="_blank" rel="noopener noreferrer" className="btn-outline min-h-[54px] w-full sm:w-auto rounded-xl px-8 py-3.5 text-[16px] flex items-center justify-center gap-2.5">
               <FaWhatsapp className="text-[#25D366]" /> {t("hero.whatsapp")}
             </a>
           </motion.div>

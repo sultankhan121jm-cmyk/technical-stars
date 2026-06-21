@@ -61,7 +61,7 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-4">
           <LangToggle />
-          <a href="tel:+966551895625" className="text-[14px] font-semibold px-6 py-2.5 rounded-lg min-h-[44px] flex items-center justify-center text-white whitespace-nowrap transition-all hover:shadow-lg" style={{ backgroundColor: "#EF9F27" }}>
+          <a href="tel:+966556380709" className="text-[14px] font-semibold px-6 py-2.5 rounded-lg min-h-[44px] flex items-center justify-center text-white whitespace-nowrap transition-all hover:shadow-lg" style={{ backgroundColor: "#EF9F27" }}>
             <FaPhone className="mr-1.5 text-[12px]" /> {t("nav.callNow")}
           </a>
         </div>
@@ -88,7 +88,7 @@ const Navbar = () => {
                 </NavLink>
               ))}
               <NavLink to="/contact" className={mobileLinkClass} onClick={() => setMobileOpen(false)}>{t("nav.contact")}</NavLink>
-              <a href="tel:+966551895625" className="mt-4 w-full text-[14px] font-semibold text-center px-5 py-3 rounded-lg min-h-[48px] flex items-center justify-center text-white transition-all" style={{ backgroundColor: "#EF9F27" }}>
+              <a href="tel:+966556380709" className="mt-4 w-full text-[14px] font-semibold text-center px-5 py-3 rounded-lg min-h-[48px] flex items-center justify-center text-white transition-all" style={{ backgroundColor: "#EF9F27" }}>
                 <FaPhone className="mr-1.5" /> {t("nav.callNow")}
               </a>
             </nav>

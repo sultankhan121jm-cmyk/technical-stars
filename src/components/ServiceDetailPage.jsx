@@ -97,10 +97,10 @@ const ServiceDetailPage = ({ slug }) => {
             <h1 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-white">{service.title}</h1>
             <p className="mt-4 text-sm md:text-base text-brand-light leading-relaxed">{fullDesc}</p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-              <a href="tel:+966551895625" className="min-h-[48px] w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 bg-[#EF9F27] text-brand-primary font-bold rounded-lg hover:brightness-110 transition-all duration-200">
+              <a href="tel:+966556380709" className="min-h-[48px] w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 bg-[#EF9F27] text-brand-primary font-bold rounded-lg hover:brightness-110 transition-all duration-200">
                 <FaPhone /> {staticText.callNow}
               </a>
-              <a href="https://wa.me/966551895625" target="_blank" rel="noopener noreferrer" className="min-h-[48px] w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 bg-transparent border-2 border-[#EF9F27] text-[#EF9F27] font-bold rounded-lg hover:bg-[#EF9F27]/10 transition-all duration-200">
+              <a href="https://wa.me/966556380709" target="_blank" rel="noopener noreferrer" className="min-h-[48px] w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 bg-transparent border-2 border-[#EF9F27] text-[#EF9F27] font-bold rounded-lg hover:bg-[#EF9F27]/10 transition-all duration-200">
                 <FaWhatsapp /> {staticText.whatsappUs}
               </a>
             </div>
