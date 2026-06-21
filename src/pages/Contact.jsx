@@ -138,22 +138,38 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Form Data:", data);
-    setIsSubmitting(false);
-    setIsSuccess(true);
-  };
 
-  const handleReset = () => {
-    reset();
-    setIsSuccess(false);
-  };
+    try {
+      // Combine First and Last name for the backend
+      const fullName = `${data.firstName} ${data.lastName}`;
 
-  const inputClass = (hasError) =>
-    `w-full px-4 py-3 border rounded-xl text-sm bg-white focus:outline-none focus:ring-2 transition-colors ${hasError
-      ? "border-red-400 focus:ring-red-200"
-      : "border-brand-light focus:border-brand-accent focus:ring-[#378ADD]/20"
-    }`;
+      // Send data to the Render Backend API
+      const response = await fetch('https://technical-stars.onrender.com/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fullName,
+          phone: data.phone,
+          service: data.service,
+          message: data.message
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSuccess(true);
+        reset();
+      } else {
+        alert(result.message);
+      }
+    } catch (error) {
+      alert("Failed to send message. Please try again.");
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <main>
