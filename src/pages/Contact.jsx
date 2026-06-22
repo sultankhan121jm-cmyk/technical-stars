@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -12,7 +12,8 @@ import {
   FaSpinner,
 } from "react-icons/fa";
 import CTABanner from "../components/CTABanner";
-import { useLang } from "../contexts/LanguageContext"; // ADDED
+import { useLang } from "../contexts/LanguageContext";
+import API_URL from "../utils/api";
 import contactBanner from "../assets/images/contact-banner.jpg";
 
 /* ── Animation Variant ── */
@@ -20,6 +21,13 @@ const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 },
 };
+
+/* ── Input Class Function ── */
+const inputClass = (error) =>
+  `w-full px-4 py-3 border rounded-xl text-sm outline-none transition-colors duration-200 bg-white ${error
+    ? "border-red-500 focus:ring-2 focus:ring-red-200"
+    : "border-gray-300 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20"
+  }`;
 
 /* ── Translations Dictionary ── */
 const content = {
@@ -96,12 +104,18 @@ const content = {
 const iconMap = { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaClock };
 
 const Contact = () => {
-  const { lang } = useLang(); // ADDED
+  const { lang } = useLang();
   const isAr = lang === "ar";
-  const t = content[lang];    // ADDED
+  const t = content[lang];
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const successRef = useRef(null);
+  useEffect(() => {
+    if (isSuccess && successRef.current) {
+      successRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [isSuccess]);
 
   const {
     register,
@@ -110,7 +124,6 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
 
-  /* ── Validation Rules (Moved inside to access translations) ── */
   const firstNameRules = {
     required: t.errors.firstNameReq,
     minLength: { value: 2, message: t.errors.firstNameMin },
@@ -140,11 +153,9 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Combine First and Last name for the backend
       const fullName = `${data.firstName} ${data.lastName}`;
 
-      // Send data to the Render Backend API
-      const response = await fetch('https://technical-stars.onrender.com/api/contact', {
+      const response = await fetch(`${API_URL}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -214,7 +225,7 @@ const Contact = () => {
                     <div>
                       <h3 className="text-brand-primary text-sm font-bold">{card.title}</h3>
                       {card.link ? (
-                        <a href={card.link} target={card.link.startsWith("http") ? "_blank" : undefined} rel={card.link.startsWith("http") ? "noopener noreferrer" : undefined} className={`text-sm mt-0.5 block min-h-[44px] flex items-center ${card.linkColor} hover:underline`} dir={card.title === "Call Us" || card.title === "واتصل بنا" || card.title === "Location" || card.title === "الموقع" ? "ltr" : ""}>
+                        <a href={card.link} target={card.link.startsWith("http") ? "_blank" : undefined} rel={card.link.startsWith("http") ? "noopener noreferrer" : undefined} className={`text-sm mt-0.5 block min-h-[44px] flex items-center ${card.linkColor} hover:underline`} dir={card.title === "Call Us" || card.title === "اتصل بنا" || card.title === "Location" || card.title === "الموقع" ? "ltr" : ""}>
                           {card.value}
                         </a>
                       ) : (
@@ -284,11 +295,11 @@ const Contact = () => {
                 </form>
               </>
             ) : (
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="py-10 text-center">
+              <motion.div ref={successRef} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="py-10 text-center">
                 <FaCheckCircle className="text-[#25D366] text-5xl mx-auto" />
                 <h2 className="mt-4 text-xl font-bold text-brand-primary">{t.successTitle}</h2>
                 <p className="mt-2 text-gray-500 text-sm max-w-sm mx-auto">{t.successDesc}</p>
-                <button onClick={handleReset} className="mt-6 px-6 py-3 border border-brand-accent text-brand-accent font-medium rounded-xl hover:bg-brand-accent hover:text-white transition-colors duration-200 min-h-[44px]">
+                <button onClick={() => { reset(); setIsSuccess(false); }} className="mt-6 px-6 py-3 border border-brand-accent text-brand-accent font-medium rounded-xl hover:bg-brand-accent hover:text-white transition-colors duration-200 min-h-[44px]">
                   {t.sendAnother}
                 </button>
               </motion.div>
@@ -306,7 +317,6 @@ const Contact = () => {
           </a>
         </div>
 
-        {/* Updated Map Embed with new coordinates */}
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2000!2d46.656472!3d24.818361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ssa!4v1690000000000"
           width="100%"

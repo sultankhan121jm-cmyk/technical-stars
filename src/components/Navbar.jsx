@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaPhone, FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import logo from "../assets/images/logo.png";
-import { useLang } from "../contexts/LanguageContext";  // ✅ ADD THIS LINE
+import { useLang } from "../contexts/LanguageContext";
 import LangToggle from "./LangToggle";
 
 const Navbar = () => {
@@ -12,10 +12,10 @@ const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // ... useEffect code ...
+  // ... existing useEffect code ...
 
   const linkClass = ({ isActive }) =>
-    `text-[15px] font-semibold transition-colors min-h-[44px] flex items-center ${isActive ? "text-[#EF9F27]" : "text-white hover:text-white/90"}`; // CHANGED: use explicit color
+    `text-[15px] font-semibold transition-colors min-h-[44px] flex items-center ${isActive ? "text-[#EF9F27]" : "text-white hover:text-white/90"}`;
 
   const mobileLinkClass = ({ isActive }) =>
     `flex items-center min-h-[44px] px-4 text-[16px] font-semibold rounded-lg transition-colors ${isActive ? "text-[#EF9F27] bg-white/10" : "text-white hover:text-white/90"}`;
@@ -77,25 +77,33 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden md:hidden border-t border-white/10" style={{ backgroundColor: "#0A1F3C" }}>
-            <nav className="flex flex-col px-5 py-4 gap-0.5">
-              <NavLink to="/" className={mobileLinkClass} onClick={() => setMobileOpen(false)} end>{t("nav.home")}</NavLink>
-              <NavLink to="/about" className={mobileLinkClass} onClick={() => setMobileOpen(false)}>{t("nav.about")}</NavLink>
-              <NavLink to="/services" className={mobileLinkClass} onClick={() => setMobileOpen(false)}>{t("nav.services")}</NavLink>
-              {serviceSlugs.map((slug) => (
-                <NavLink key={slug} to={`/services/${slug}`} className="flex items-center min-h-[44px] pl-10 pr-4 text-[15px] text-white hover:text-white/90 transition-colors font-medium" onClick={() => setMobileOpen(false)}>
-                  {t(`services.${slug}`)}
-                </NavLink>
-              ))}
-              <NavLink to="/contact" className={mobileLinkClass} onClick={() => setMobileOpen(false)}>{t("nav.contact")}</NavLink>
-              <a href="tel:+966556380709" className="mt-4 w-full text-[14px] font-semibold text-center px-5 py-3 rounded-lg min-h-[48px] flex items-center justify-center text-white transition-all" style={{ backgroundColor: "#EF9F27" }}>
-                <FaPhone className="mr-1.5" /> {t("nav.callNow")}
-              </a>
-            </nav>
-          </motion.div>
+          <div className="md:hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-white/10" style={{ backgroundColor: "#0A1F3C" }}>
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              <nav className="flex flex-col px-5 py-4 pb-8 gap-0.5">
+                <NavLink to="/" className={mobileLinkClass} onClick={() => setMobileOpen(false)} end>{t("nav.home")}</NavLink>
+                <NavLink to="/about" className={mobileLinkClass} onClick={() => setMobileOpen(false)}>{t("nav.about")}</NavLink>
+                <NavLink to="/services" className={mobileLinkClass} onClick={() => setMobileOpen(false)}>{t("nav.services")}</NavLink>
+                {serviceSlugs.map((slug) => (
+                  <NavLink key={slug} to={`/services/${slug}`} className="flex items-center min-h-[44px] pl-10 pr-4 text-[15px] text-white hover:text-white/90 transition-colors font-medium" onClick={() => setMobileOpen(false)}>
+                    {t(`services.${slug}`)}
+                  </NavLink>
+                ))}
+                <NavLink to="/contact" className={mobileLinkClass} onClick={() => setMobileOpen(false)}>{t("nav.contact")}</NavLink>
+                <a href="tel:+966556380709" className="mt-4 w-full text-[14px] font-semibold text-center px-5 py-3 rounded-lg min-h-[48px] flex items-center justify-center text-white transition-all" style={{ backgroundColor: "#EF9F27" }}>
+                  <FaPhone className="mr-1.5" /> {t("nav.callNow")}
+                </a>
+              </nav>
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
-    </header>
+    </header >
   );
 };
 

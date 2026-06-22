@@ -16,6 +16,7 @@ import ACInstallation from "./pages/services/ACInstallation";
 import ACCleaning from "./pages/services/ACCleaning";
 import WashingMachine from "./pages/services/WashingMachine";
 import Plumbing from "./pages/services/Plumbing";
+import Electricity from "./pages/services/Electricity";
 
 function App() {
   return (
