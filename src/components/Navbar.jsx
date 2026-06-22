@@ -29,7 +29,7 @@ const Navbar = () => {
 
       <div className="max-w-7xl mx-auto px-5 lg:px-16 flex items-center justify-between h-16">
         <NavLink to="/" className="flex items-center min-h-[44px]">
-          <img src={logo} alt="Technical Stars" className="h-9 md:h-10 w-auto object-contain" />
+          <img src={logo} alt="Technical Stars" width="40" height="40" className="h-9 md:h-10 w-auto object-contain" />
         </NavLink>
 
         <nav className="hidden md:flex items-center gap-8">

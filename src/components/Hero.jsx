@@ -43,7 +43,7 @@ const Hero = () => {
   return (
     <section className="bg-brand-bg min-h-screen flex flex-col">
       <div className="max-w-7xl mx-auto w-full px-5 lg:px-16 pt-32 md:pt-40 pb-16 md:pb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center flex-1">
-        <div className="flex flex-col text-center lg:text-left">
+        <div className="flex flex-col text-center lg:text-left min-h-[120px] md:min-h-[150px]">
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -110,7 +110,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="w-full max-w-xl mx-auto lg:mx-0 lg:ml-auto"
         >
-          <img src={heroMain} alt="Technical Stars" loading="eager" className="w-full rounded-2xl object-cover max-h-[320px] md:max-h-[440px] lg:max-h-[520px] shadow-2xl shadow-brand-navy/10" />
+          <img src={heromain} alt="Technical Stars" width="1200" height="896" loading="eager" className="w-full rounded-2xl object-cover max-h-[320px] md:max-h-[440px] lg:max-h-[520px]..." />
         </motion.div>
       </div>
     </section>
