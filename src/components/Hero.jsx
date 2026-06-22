@@ -32,7 +32,6 @@ const Counter = ({ value, suffix = "" }) => {
 const Hero = () => {
   const { t, lang } = useLang();
 
-  // SAFETY CHECK: This ensures we only pass STRINGS to the <p> tag below, never objects
   const stats = [
     { value: 500, suffix: "+", label: String(t("hero.stats.happyClients")) },
     { value: 10, suffix: "+", label: String(t("hero.stats.yearsExp")) },
@@ -110,7 +109,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="w-full max-w-xl mx-auto lg:mx-0 lg:ml-auto"
         >
-          <img src={heromain} alt="Technical Stars" width="1200" height="896" loading="eager" className="w-full rounded-2xl object-cover max-h-[320px] md:max-h-[440px] lg:max-h-[520px]..." />
+          <img src={heroMain} alt="Technical Stars" width="1200" height="896" loading="eager" className="w-full rounded-2xl object-cover max-h-[320px] md:max-h-[440px] lg:max-h-[520px]" />
         </motion.div>
       </div>
     </section>
