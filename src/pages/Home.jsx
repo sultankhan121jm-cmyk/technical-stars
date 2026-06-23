@@ -410,9 +410,16 @@ const FAQSection = () => {
           <p className="mt-3 text-slate-500 text-sm font-medium">{t("faq.subtitle")}</p>
         </div>
 
-        <div className="space-y-3 font-sans">
+        {/* Explicitly force text-right and rtl formatting if needed */}
+        <div className="space-y-3 font-sans" dir={isRtl ? "rtl" : "auto"}>
           {faqs.slice(0, 5).map((faq, i) => {
             const isOpen = openIndex === i;
+            const questionText = getQ(faq);
+
+            // Safety Check: Detect if the text string contains Arabic characters
+            const hasArabicText = /[\u0600-\u06FF]/.test(questionText);
+            const shouldAlignRight = isRtl || hasArabicText;
+
             return (
               <div
                 key={faq.id}
@@ -420,11 +427,12 @@ const FAQSection = () => {
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className={`w-full flex items-center justify-between py-5 text-left gap-4 ${isRtl ? "flex-row-reverse text-right" : "text-left"
+                  className={`w-full flex items-center justify-between py-5 gap-4 ${shouldAlignRight ? "flex-row-reverse text-right" : "text-left"
                     }`}
+                  style={{ textAlign: shouldAlignRight ? 'right' : 'left' }}
                 >
-                  <span className="text-slate-900 text-base font-bold tracking-tight hover:text-blue-700 transition-colors">
-                    {getQ(faq)}
+                  <span className="text-slate-900 text-base font-bold tracking-tight hover:text-blue-700 transition-colors block w-full">
+                    {questionText}
                   </span>
                   <span className={`text-xs flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-blue-700" : "text-slate-400"}`}>
                     <FaChevronDown />
@@ -439,7 +447,10 @@ const FAQSection = () => {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <div className={`pb-6 text-slate-600 text-sm leading-relaxed ${isRtl ? "text-right" : "text-left"}`}>
+                      <div
+                        className={`pb-6 text-slate-600 text-sm leading-relaxed`}
+                        style={{ textAlign: shouldAlignRight ? 'right' : 'left' }}
+                      >
                         {getA(faq)}
                       </div>
                     </motion.div>
@@ -454,18 +465,26 @@ const FAQSection = () => {
   );
 };
 
-const Home = () => (
-  <main className="overflow-x-hidden antialiased bg-white selection:bg-blue-700 selection:text-white">
-    <Hero />
-    <StatsBar />
-    <ServicesSection />
-    <WhyChooseUsSection />
-    <HowItWorksSection />
-    <TestimonialsSection />
-    <ServiceAreaTeaser />
-    <FAQSection />
-    <CTABanner />
-  </main>
-);
+const Home = () => {
+  const { lang } = useLang();
+  const isRtl = lang === "ar";
+
+  return (
+    <main
+      dir={isRtl ? "rtl" : "ltr"}
+      className="overflow-x-hidden antialiased bg-white selection:bg-blue-700 selection:text-white"
+    >
+      <Hero />
+      <StatsBar />
+      <ServicesSection />
+      <WhyChooseUsSection />
+      <HowItWorksSection />
+      <TestimonialsSection />
+      <ServiceAreaTeaser />
+      <FAQSection />
+      <CTABanner />
+    </main>
+  );
+};
 
 export default Home;
