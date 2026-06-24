@@ -5,7 +5,6 @@ const WhatsAppButton = () => {
   return (
     <motion.div
       className="fixed bottom-6 right-6 z-50"
-      /* Framer Motion whileHover to trigger the tooltip animation */
       whileHover="showTooltip"
       initial="hideTooltip"
     >
@@ -25,7 +24,7 @@ const WhatsAppButton = () => {
 
       {/* ── Main WhatsApp Button ── */}
       <a
-        href="https://wa.me/966556380709"
+        href="https://wa.me/923214875662"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"

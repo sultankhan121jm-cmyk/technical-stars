@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaPhone } from "react-icons/fa";
-import { useLang } from "../contexts/LanguageContext";
 
 const FloatingButtons = () => {
-  const { lang } = useLang();
-
-  // Custom animation for staggered entrance
   const buttonVariants = {
     hidden: { scale: 0, y: 20, opacity: 0 },
     visible: (i) => ({
@@ -26,7 +22,7 @@ const FloatingButtons = () => {
 
       {/* Call Button */}
       <motion.a
-        href="tel:+966556380709"
+        href="tel:+923214875662"
         custom={0}
         variants={buttonVariants}
         initial="hidden"
@@ -34,7 +30,7 @@ const FloatingButtons = () => {
         whileHover={{ scale: 1.1, y: -3 }}
         whileTap={{ scale: 0.9 }}
         className="relative w-14 h-14 rounded-full bg-white shadow-lg shadow-black/10 border border-gray-200 text-brand-blue text-xl flex items-center justify-center hover:shadow-xl transition-shadow"
-        aria-label={lang === "ar" ? "اتصل بنا" : "Call us"}
+        aria-label="Call us"
       >
         <FaPhone />
       </motion.a>
@@ -57,13 +53,13 @@ const FloatingButtons = () => {
             duration: 1.5,
             repeat: Infinity,
             ease: "easeOut",
-            delay: 0.6 // Staggered delay for a continuous wave effect
+            delay: 0.6
           }}
         />
 
         {/* Actual Button */}
         <motion.a
-          href="https://wa.me/966556380709"
+          href="https://wa.me/923214875662"
           target="_blank"
           rel="noopener noreferrer"
           custom={1}
