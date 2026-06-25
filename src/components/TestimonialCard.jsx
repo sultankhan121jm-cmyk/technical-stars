@@ -1,9 +1,17 @@
 import { motion } from "framer-motion";
-import { FaCheckCircle, FaStar, FaUser } from "react-icons/fa";
+import { FaCheckCircle, FaStar } from "react-icons/fa";
+import { useLang } from "../contexts/LanguageContext";
 
 const fadeInUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
 
-const TestimonialCard = ({ name, location, review, service, rating, image, index = 0 }) => {
+const TestimonialCard = ({ name, location, review, service, index = 0 }) => {
+  const { lang } = useLang();
+
+  const nameStr = typeof name === "object" ? name[lang] : name;
+  const locationStr = typeof location === "object" ? location[lang] : location;
+  const reviewStr = typeof review === "object" ? review[lang] : review;
+  const serviceStr = typeof service === "object" ? service[lang] : service;
+
   return (
     <motion.div
       variants={fadeInUp}
@@ -16,7 +24,7 @@ const TestimonialCard = ({ name, location, review, service, rating, image, index
       {/* Stars */}
       <div className="flex items-center gap-1 mb-4">
         {[...Array(5)].map((_, i) => (
-          <FaStar key={i} className="text-[#F5A623] text-sm" />
+          <FaStar key={i} className="text-[#EF9F27] text-sm" />
         ))}
       </div>
 
@@ -26,38 +34,24 @@ const TestimonialCard = ({ name, location, review, service, rating, image, index
           <FaCheckCircle className="text-[#9FE1CB] text-sm" />
           Verified
         </span>
-        <span className="bg-[#F5A623] text-[#0F2F8A] text-xs rounded-full px-3 py-1 font-bold whitespace-nowrap">
-          {service}
+        <span className="bg-[#EF9F27] text-[#0A1F3C] text-xs rounded-full px-3 py-1 font-bold whitespace-nowrap">
+          {serviceStr}
         </span>
       </div>
 
       {/* Review Text */}
-      <p className="mt-4 text-sm md:text-base text-[#E8EFFE] leading-relaxed flex-1">
-        &ldquo;{review}&rdquo;
+      <p className="mt-4 text-sm md:text-base text-[#E8F0FE] leading-relaxed flex-1">
+        &ldquo;{reviewStr}&rdquo;
       </p>
 
       {/* Customer Info */}
       <div className="mt-5 flex items-center gap-3 pt-4 border-t border-[#1A3A5C]">
-        <div className="w-11 h-11 min-w-[44px] bg-white rounded-full overflow-hidden flex items-center justify-center flex-shrink-0">
-          {image ? (
-            <img
-              src={image}
-              alt={name}
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-                e.currentTarget.nextElementSibling.style.display = "flex";
-              }}
-              className="w-full h-full"
-            />
-          ) : null}
-          <FaUser
-            className="text-gray-400 text-sm"
-            style={{ display: image ? "none" : "flex" }}
-          />
+        <div className="w-11 h-11 min-w-[44px] bg-[#EF9F27] rounded-full flex items-center justify-center text-[#0A1F3C] font-bold text-base">
+          {nameStr.charAt(0)}
         </div>
         <div>
-          <p className="text-white text-sm font-bold">{name}</p>
-          <p className="text-[#9FE1CB] text-xs mt-0.5 font-medium">{location}</p>
+          <p className="text-white text-sm font-bold">{nameStr}</p>
+          <p className="text-[#9FE1CB] text-xs mt-0.5 font-medium">{locationStr}</p>
         </div>
       </div>
     </motion.div>
