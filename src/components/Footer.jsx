@@ -11,8 +11,8 @@ const Footer = () => {
 
   const text = {
     desc: isAr
-      ? "خدمات صيانة منزلية احترافية وسريعة في الرياض. فنيون معتمدون لجميع أعمال التكييف والسباكة والكهرباء."
-      : "Professional and fast home maintenance services in Riyadh. Certified technicians for all AC, plumbing, and electrical work.",
+      ? "خدمات صيانة منزلية احترافية وسريعة في الرياض. فنيون معتمدون لجميع أعمال التكييف وغسالات الملابس."
+      : "Professional and fast home maintenance services in Riyadh. Certified technicians for all AC and washing machine work.",
     quickLinks: isAr ? "روابط سريعة" : "Quick Links",
     home: isAr ? "الرئيسية" : "Home",
     services: isAr ? "خدماتنا" : "Services",
@@ -20,9 +20,9 @@ const Footer = () => {
     contact: isAr ? "اتصل بنا" : "Contact Us",
     topServices: isAr ? "أفضل الخدمات" : "Top Services",
     acRepair: isAr ? "إصلاح مكيفات" : "AC Repair",
+    acInstall: isAr ? "تركيب مكيفات" : "AC Installation",
     acClean: isAr ? "تنظيف مكيفات" : "AC Cleaning",
-    plumbing: isAr ? "سباكة" : "Plumbing",
-    electric: isAr ? "كهرباء" : "Electricity",
+    washingMachine: isAr ? "غسالات" : "Washing Machine",
     contactUs: isAr ? "تواصل معنا" : "Contact Us",
     address: isAr ? "الرياض، المملكة العربية السعودية" : "Riyadh, Saudi Arabia",
     phone: "+966 556380709",
@@ -49,10 +49,10 @@ const Footer = () => {
             {text.desc}
           </p>
           <div className="mt-6 flex items-center gap-3">
-            <a href="https://wa.me/966556380709" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full...">
+            <a href="https://wa.me/966556380709" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white flex items-center justify-center transition-all duration-200">
               <FaWhatsapp />
             </a>
-            <a href="tel:+966556380709" className="w-10 h-10 rounded-full...">
+            <a href="tel:+966556380709" className="w-10 h-10 rounded-full bg-[#EF9F27]/20 text-[#EF9F27] hover:bg-[#EF9F27] hover:text-white flex items-center justify-center transition-all duration-200">
               <FaPhoneAlt />
             </a>
           </div>
@@ -76,7 +76,12 @@ const Footer = () => {
         <div>
           <h4 className="text-white font-bold text-base mb-5">{text.topServices}</h4>
           <ul className="space-y-3">
-            {[{ to: "/services/ac-repair", label: text.acRepair }, { to: "/services/ac-cleaning", label: text.acClean }, { to: "/services/plumbing", label: text.plumbing }, { to: "/services/electricity", label: text.electric }].map((link) => (
+            {[
+              { to: "/services/ac-repair", label: text.acRepair },
+              { to: "/services/ac-installation", label: text.acInstall },
+              { to: "/services/ac-cleaning", label: text.acClean },
+              { to: "/services/washing-machine", label: text.washingMachine }
+            ].map((link) => (
               <li key={link.to}>
                 <Link to={link.to} className="text-sm text-gray-400 hover:text-[#EF9F27] transition-colors duration-200">
                   {link.label}
@@ -122,4 +127,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;   
+export default Footer;

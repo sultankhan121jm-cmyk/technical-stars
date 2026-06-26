@@ -101,7 +101,7 @@ const About = () => {
             <div className="mt-8 grid grid-cols-3 gap-4">
               {/* Changed border-r to border-e so it flips correctly in Arabic RTL */}
               <div className="border-e border-[#E6F1FB] pe-4 text-center lg:text-start">
-                <span className="text-2xl font-bold text-brand-cta">500+</span>
+                <span className="text-2xl font-bold text-brand-cta">2500+</span>
                 <p className="text-xs text-gray-600 mt-1">{t.happyClients}</p>
               </div>
               <div className="border-e border-[#E6F1FB] pe-4 text-center lg:text-start">

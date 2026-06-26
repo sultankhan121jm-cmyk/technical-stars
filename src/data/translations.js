@@ -50,8 +50,6 @@ const translations = {
       "ac-installation": "AC Installation",
       "ac-cleaning": "AC Cleaning",
       "washing-machine": "Washing Machine Repair",
-      "plumbing": "Plumbing",
-      electricity: "Electricity",
     },
 
     // Why Choose Us
@@ -166,8 +164,6 @@ const translations = {
         "AC Installation": "AC Installation",
         "AC Cleaning": "AC Cleaning",
         "Washing Machine Repair": "Washing Machine Repair",
-        Plumbing: "Plumbing",
-        Electricity: "Electricity",
         Other: "Other",
       },
       validation: {
@@ -299,14 +295,7 @@ const translations = {
         shortDesc: "Fast fixes for all washing machine problems.",
         fullDesc: "Whether your washing machine won't spin, drain, or turn on at all, our technicians can handle it. We repair top-load and front-load machines from all major brands, using genuine parts and offering reliable same-day service across Riyadh.",
       },
-      plumbing: {
-        shortDesc: "Fast plumbing repairs, leak detection and pipe installation",
-        fullDesc: "Our professional plumbers handle everything from leak detection to pipe installations — without breaking your walls. Whether it's a bathroom renovation or an emergency pipe burst, we deliver fast, reliable plumbing solutions across Riyadh.",
-      },
-      electricity: {
-        shortDesc: "Certified electrical repairs, wiring and panel installation",
-        fullDesc: "Our certified electricians handle all electrical work, from short circuit repairs to complete panel upgrades and wiring. We ensure your home or office in Riyadh remains safe, code-compliant, and efficiently powered.",
-      },
+
     },
 
     // Services features
@@ -334,18 +323,6 @@ const translations = {
         "Motor and belt replacement",
         "Door lock and seal fixing",
         "Control board diagnosis and repair",
-      ],
-      plumbing: [
-        "Leak Detection Without Breaking Walls",
-        "Drain Unblocking",
-        "Water Heater Installation",
-        "Sanitary Ware Fitting",
-      ],
-      electricity: [
-        "Short Circuit Repair",
-        "Electrical Panel Installation",
-        "Certified Cable Extensions",
-        "Smart Lighting Setup",
       ],
     },
   },
@@ -401,8 +378,6 @@ const translations = {
       "ac-installation": "تركيب التكييف",
       "ac-cleaning": "تنظيف التكييف",
       "washing-machine": "إصلاح الغسالة",
-      "plumbing": "السباكة",
-      electricity: "الكهرباء",
     },
 
     // Why Choose Us
@@ -517,8 +492,6 @@ const translations = {
         "AC Installation": "تركيب التكييف",
         "AC Cleaning": "تنظيف التكييف",
         "Washing Machine Repair": "إصلاح الغسالة",
-        Plumbing: "السباكة",
-        Electricity: "الكهرباء",
         Other: "أخرى",
       },
       validation: {
@@ -650,14 +623,6 @@ const translations = {
         shortDesc: "إصلاح سريع لجميع مشاكل الغسالة.",
         fullDesc: "سواء لم تدور الغسالة أو لم تصرف أو لم تعمل إطلاقاً، يمكن لفنيينا التعامل معها. نصلح الغسالات العلوية والأمامية من جميع العلامات التجارية الكبرى باستخدام قطع أصلية مع خدمة موثوقة في نفس اليوم في الرياض.",
       },
-      plumbing: {
-        shortDesc: "إصلاح سباكة سريع، كشف تسريبات وتركيب أنابيب",
-        fullDesc: "يتعامل سباكونا المحترفون مع كل شيء من كشف التسريبات إلى تركيب الأنابيب — بدون كسر جدرانك. سواء كانت تجديد حمام أو انفجار أنبوب طارئ، نقدم حلول سباكة سريعة وموثوقة في الرياض.",
-      },
-      electricity: {
-        shortDesc: "إصلاح كهرباء معتمد، تمديدات وتركيب لوحات",
-        fullDesc: "يتعامل كهربائيونا المعتمدون مع جميع الأعمال الكهربائية، من إصلاح الدوائر القصيرة إلى ترقية اللوحات والتمديدات الكاملة. نضمن بقاء منزلك أو مكتبك في الرياض آمناً ومتوافقاً مع الأنظمة وفعالاً في الطاقة.",
-      },
     },
 
     // Services features
@@ -685,18 +650,6 @@ const translations = {
         "استبدال المحرك والحزام",
         "إصلاح قفل وباب الغسالة",
         "تشخيص وإصلاح لوحة التحكم",
-      ],
-      plumbing: [
-        "كشف التسريبات بدون كسر الجدران",
-        "فتح المجاري المسدودة",
-        "تركيب سخانات المياه",
-        "تركيب المرافق الصحية",
-      ],
-      electricity: [
-        "إصلاح الدوائر القصيرة",
-        "تركيب لوحات الكهرباء",
-        "تمديدات كابلات معتمدة",
-        "تركيب إضاءة ذكية",
       ],
     },
   },

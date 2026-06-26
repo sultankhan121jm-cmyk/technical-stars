@@ -17,15 +17,11 @@ import faqs from "../data/faqs";
 const featureKeys = ["speed", "warranty", "certified", "rated"];
 const stepKeys = ["call", "diagnose", "repair", "warranty"];
 
-// ─── 1. FIXED ELECTRICAL KEY MATCHING ────────────────────────────────────────
 const serviceImages = {
   "air-conditioning": "/images/repair.jpg",
   "ac-installation": "/images/installation.jpg",
   "ac-cleaning": "/images/cleaning.jpg",
   "washing-machine": "/images/washing-machine.jpg",
-  "plumbing": "/images/plumbing.jpg",
-  "electricity": "/images/electrical.jpg", // Fixed to match your exact dynamic slug
-  "electrical": "/images/electrical.jpg",          // Fallback backup key
   "default": "/images/repair.jpg"
 };
 
@@ -136,7 +132,6 @@ const ServicesSection = () => {
           className="mt-14 mb-12 rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-xl group flex flex-col lg:flex-row items-stretch justify-between relative"
         >
           <div className="w-full lg:w-5/12 min-h-[320px] lg:min-h-auto relative overflow-hidden bg-slate-100">
-            {/* ── 3. LOCALLY HOSTED PICTURE ── */}
             <img
               src="/images/spotlight-repair.jpeg"
               alt="Professional Split AC Repairing"
@@ -159,7 +154,6 @@ const ServicesSection = () => {
             </div>
 
             <div className="mt-8 pt-6 border-t border-white/10">
-              {/* ── 2. FIXED TARGET ROUTE LINK ── */}
               <a
                 href="https://www.technicalstars.online/services"
                 className="inline-flex items-center gap-3 bg-amber-500 text-slate-950 font-black text-base rounded-2xl px-8 py-4 shadow-xl hover:bg-amber-400 transform hover:-translate-y-0.5 transition-all"
@@ -237,12 +231,9 @@ const WhyChooseUsSection = () => {
           </div>
           <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden shadow-xl border border-slate-800 flex flex-col sm:flex-row items-center gap-8 group">
             <div className="text-center flex-shrink-0 relative z-10">
-              {/* ── CHANGED RATING TO 4.5 ── */}
               <p className="text-6xl font-black text-white tracking-tight" dir="ltr">4.5</p>
               <div className="flex items-center justify-center gap-1 mt-2">
-                {/* Renders 4 full stars */}
                 {[...Array(4)].map((_, i) => <FaStar key={i} className="text-amber-400 text-base" />)}
-                {/* Renders 1 half star to match 4.5 precisely */}
                 <span className="text-amber-400 text-base relative overflow-hidden w-[8px] inline-block select-none leading-none">★</span>
               </div>
               <p className="text-amber-400 text-xs font-black uppercase tracking-wider mt-2">500+ reviews</p>
@@ -287,7 +278,6 @@ const HowItWorksSection = () => {
       <div className="max-w-7xl mx-auto px-5 lg:px-16 relative z-10">
         <SectionHead label={t("howItWorks.label")} title={t("howItWorks.title")} />
 
-        {/* ── 3. LOCALLY HOSTED APPRAISAL SHOWCASE BANNER ── */}
         <div className="w-full h-72 md:h-96 rounded-3xl overflow-hidden relative mb-16 border border-slate-200 shadow-md">
           <img
             src="/images/how-it-works.jpeg"
@@ -346,7 +336,6 @@ const TestimonialsSection = () => {
   );
 };
 
-// ─── 4. FIXED NORTH RIYADH COVERAGE METRICS ──────────────────────────────────
 const ServiceAreaTeaser = () => {
   const { lang } = useLang();
   const isRtl = lang === "ar";
@@ -392,7 +381,6 @@ const ServiceAreaTeaser = () => {
   );
 };
 
-// ─── 5. FIXED FAQ PROFESSIONAL VIEWPORT ───────────────────────────────────────
 const FAQSection = () => {
   const { t, lang } = useLang();
   const isRtl = lang === "ar";
@@ -410,13 +398,11 @@ const FAQSection = () => {
           <p className="mt-3 text-slate-500 text-sm font-medium">{t("faq.subtitle")}</p>
         </div>
 
-        {/* Explicitly force text-right and rtl formatting if needed */}
         <div className="space-y-3 font-sans" dir={isRtl ? "rtl" : "auto"}>
           {faqs.slice(0, 5).map((faq, i) => {
             const isOpen = openIndex === i;
             const questionText = getQ(faq);
 
-            // Safety Check: Detect if the text string contains Arabic characters
             const hasArabicText = /[\u0600-\u06FF]/.test(questionText);
             const shouldAlignRight = isRtl || hasArabicText;
 

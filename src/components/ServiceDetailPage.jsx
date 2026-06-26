@@ -13,8 +13,6 @@ import acRepairImg from "../assets/images/service-ac-repair.jpg";
 import acInstallImg from "../assets/images/service-ac-installation.jpg";
 import acCleanImg from "../assets/images/service-ac-cleaning.jpg";
 import washingImg from "../assets/images/service-washing-machine.jpg";
-import plumbingImg from "../assets/images/service-plumbing.jpg";
-import electricityImg from "../assets/images/service-electricity.jpg";
 
 // --- NEW IMAGE MAP ---
 const serviceImages = {
@@ -22,8 +20,6 @@ const serviceImages = {
   'ac-installation': acInstallImg,
   'ac-cleaning': acCleanImg,
   'washing-machine': washingImg,
-  'plumbing': plumbingImg,
-  'electricity': electricityImg,
 };
 
 const fadeInUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };

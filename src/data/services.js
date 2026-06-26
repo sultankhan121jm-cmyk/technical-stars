@@ -51,32 +51,7 @@ const services = [
     },
     brands: ["Samsung", "LG", "Gree", "Carrier", "York", "Midea"],
   },
-  {
-    id: 5, slug: "plumbing", iconName: "FaFaucet",
-    shortDesc: { en: "Fast plumbing repairs, leak detection and pipe installation", ar: "إصلاحات سباكة سريعة، كشف تسربات وتركيب أنابيب" },
-    fullDesc: {
-      en: "Our professional plumbers handle everything from leak detection to pipe installations — without breaking your walls. Whether it's a bathroom renovation or an emergency pipe burst, we deliver fast, reliable plumbing solutions across Riyadh.",
-      ar: "يتعامل سباكونا المحترفون مع كل شيء من كشف التسربات إلى تركيب الأنابيب — دون كسر جدرانك. سواء كانت تجديد حمام أو انفجار أنبوب طوارئ، نقدم حلول سباكة سريعة وموثوقة في جميع أنحاء الرياض.",
-    },
-    features: {
-      en: ["Leak Detection Without Breaking Walls", "Drain Unblocking", "Water Heater Installation", "Sanitary Ware Fitting"],
-      ar: ["كشف التسربات بدون كسر الجدران", "فتح المجاري المسدودة", "تركيب سخانات المياه", "تركيب أدوات صحية"],
-    },
-    brands: ["Grohe", "American Standard", "TOTO", "Hansgrohe"],
-  },
-  {
-    id: 6, slug: "electricity", iconName: "FaBolt",
-    shortDesc: { en: "Certified electrical repairs, wiring and panel installation", ar: "إصلاحات كهربائية معتمدة، تمديدات وتركيب لوحات" },
-    fullDesc: {
-      en: "Our certified electricians handle all electrical work, from short circuit repairs to complete panel upgrades and wiring. We ensure your home or office in Riyadh remains safe, code-compliant, and efficiently powered.",
-      ar: "يتعامل كهربائيونا المعتمدون مع جميع الأعمال الكهربائية، من إصلاحات القصر الكهربائي إلى ترقية اللوحات والتمديدات الكاملة. نضمن بقاء منزلك أو مكتبك في الرياض آمناً ومطابقاً للمواصفات ومزوداً بالكفاءة.",
-    },
-    features: {
-      en: ["Short Circuit Repair", "Electrical Panel Installation", "Certified Cable Extensions", "Smart Lighting Setup"],
-      ar: ["إصلاح القصر الكهربائي", "تركيب اللوحات الكهربائية", "تمديدات كابلات معتمدة", "تركيب إضاءة ذكية"],
-    },
-    brands: ["Schneider Electric", "ABB", "Legrand", "Siemens"],
-  },
+
 ];
 
 export default services;
