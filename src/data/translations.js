@@ -16,12 +16,12 @@ const translations = {
       titleLine1: "Fast & Reliable",
       titleHighlight: "AC & Home Repair",
       titleLine2: "Services in Riyadh",
-      subtitle: "Technical Stars provides expert AC repair, installation, plumbing, and electrical services across Riyadh. Available 24/7 with certified technicians at your door.",
+      subtitle: "We provides expert AC repair, installation, cleaning and washing machine services across Riyadh. Available 24/7 with certified technicians at your door.",
       callNow: "Call Now",
       whatsapp: "WhatsApp Us",
       licensed: "Licensed & Certified",
       insured: "Fully Insured",
-      response60: "60 Min Response",
+      response60: "30 Min Response",
       stats: {
         happyClients: "Happy Clients",
         yearsExp: "Years Experience",
@@ -39,7 +39,7 @@ const translations = {
     servicesSection: {
       label: "Our Services",
       title: "What We Fix & Install",
-      subtitle: "From AC repair to plumbing and electrical work — Technical Stars handles it all across Riyadh",
+      subtitle: "From AC repair to washing machine servicing — Technical Stars handles it all across Riyadh",
       needService: "Need a service not listed here? Contact us directly",
       viewAll: "View All Services",
     },
@@ -103,7 +103,7 @@ const translations = {
 
     // Footer
     footer: {
-      tagline: "Your trusted partner for AC, appliance, plumbing, and electrical services in Riyadh. Available 24/7.",
+      tagline: "Your trusted partner for AC and washing machine services in Riyadh. Available 24/7.",
       contactUs: "Contact Us",
       whatsapp: "WhatsApp",
       ourServices: "Our Services",
@@ -120,7 +120,7 @@ const translations = {
       storyLabel: "Our Story",
       storyTitle: "10 Years Serving Riyadh Homes",
       storyText1: "Technical Stars was founded in 2015 with a simple mission — to provide fast, honest, and high-quality home repair services to families across Riyadh. What started as a small AC repair team has grown into a full-service home maintenance company trusted by hundreds of households.",
-      storyText2: "Today our team of certified technicians handles everything from AC installation and repair to plumbing, electrical work, and washing machine servicing. We take pride in our 60-minute response time, transparent pricing, and written warranty on every job.",
+      storyText2: "Today our team of certified technicians handles everything from AC installation, repair, and cleaning to washing machine servicing. We take pride in our 60-minute response time, transparent pricing, and written warranty on every job.",
       stats: { clients: "Happy Clients", years: "Years Experience", services: "Services Offered" },
       valuesLabel: "Our Values",
       valuesTitle: "What Drives Us Every Day",
@@ -295,7 +295,6 @@ const translations = {
         shortDesc: "Fast fixes for all washing machine problems.",
         fullDesc: "Whether your washing machine won't spin, drain, or turn on at all, our technicians can handle it. We repair top-load and front-load machines from all major brands, using genuine parts and offering reliable same-day service across Riyadh.",
       },
-
     },
 
     // Services features
@@ -344,7 +343,7 @@ const translations = {
       titleLine1: "سريع وموثوق",
       titleHighlight: "إصلاح التكييف والمنزل",
       titleLine2: "خدمات في الرياض",
-      subtitle: "يوفر نجوم التقنية خدمات احترافية لإصلاح وتركيب التكييف والسباكة والكهرباء في جميع أنحاء الرياض. متاحون على مدار الساعة مع فنيين معتمدين عند باب منزلك.",
+      subtitle: "يوفر نجوم التقنية خدمات احترافية لإصلاح وتركيب وتنظيف التكييف وإصلاح الغسالات في جميع أنحاء الرياض. متاحون على مدار الساعة مع فنيين معتمدين عند باب منزلك.",
       callNow: "اتصل الآن",
       whatsapp: "واتساب",
       licensed: "مرخص ومعتمد",
@@ -367,7 +366,7 @@ const translations = {
     servicesSection: {
       label: "خدماتنا",
       title: "ماذا نصلح ونركب",
-      subtitle: "من إصلاح التكييف إلى السباكة والأعمال الكهربائية — نجوم التقنية يتعاملون مع كل شيء في الرياض",
+      subtitle: "من إصلاح التكييف إلى صيانة الغسالات — نجوم التقنية يتعاملون مع كل شيء في الرياض",
       needService: "تحتاج خدمة غير مذكورة هنا؟ تواصل معنا مباشرة",
       viewAll: "عرض جميع الخدمات",
     },
@@ -431,7 +430,7 @@ const translations = {
 
     // Footer
     footer: {
-      tagline: "شريكك الموثوق لخدمات التكييف والأجهزة والسباكة والكهرباء في الرياض. متاح 24/7.",
+      tagline: "شريكك الموثوق لخدمات التكييف والغسالات في الرياض. متاح 24/7.",
       contactUs: "تواصل معنا",
       whatsapp: "واتساب",
       ourServices: "خدماتنا",
@@ -448,7 +447,7 @@ const translations = {
       storyLabel: "قصتنا",
       storyTitle: "10 سنوات في خدمة منازل الرياض",
       storyText1: "تأسست نجوم التقنية في عام 2015 بمهمة بسيطة — تقديم خدمات إصلاح منزلية سريعة وصادقة وعالية الجودة للعائلات في جميع أنحاء الرياض. ما بدأ كفريق صغير لإصلاح التكييف نمى ليصبح شركة صيانة منزلية متكاملة يثق بها مئات الأسر.",
-      storyText2: "اليوم يتعامل فريقنا من الفنيين المعتمدين مع كل شيء من تركيب وإصلاح التكييف إلى السباكة والأعمال الكهربائية وصيانة الغسالات. نفخر بوقت استجابتنا البالغ 60 دقيقة وأسعارنا الشفافة والضمان المكتوب على كل عمل.",
+      storyText2: "اليوم يتعامل فريقنا من الفنيين المعتمدين مع كل شيء من تركيب وإصلاح وتنظيف التكييف إلى صيانة الغسالات. نفخر بوقت استجابتنا البالغ 60 دقيقة وأسعارنا الشفافة والضمان المكتوب على كل عمل.",
       stats: { clients: "عميل سعيد", years: "سنوات خبرة", services: "خدمات متوفرة" },
       valuesLabel: "قيمنا",
       valuesTitle: "ما يدفعنا كل يوم",

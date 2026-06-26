@@ -22,7 +22,7 @@ const content = {
     heroSub: "Riyadh's trusted home service experts since 2015",
     storyLabel: "Our Story", storyTitle: "10 Years Serving Riyadh Homes",
     storyP1: "Technical Stars was founded in 2015 with a simple mission — to provide fast, honest, and high-quality home repair services to families across Riyadh. What started as a small AC repair team has grown into a full-service home maintenance company trusted by hundreds of households.",
-    storyP2: "Today our team of certified technicians handles everything from AC installation and repair to plumbing, electrical work, and washing machine servicing. We take pride in our 60-minute response time, transparent pricing, and written warranty on every job.",
+    storyP2: "Today our team of certified technicians handles everything from AC installation, repair, and cleaning to washing machine servicing. We take pride in our 60-minute response time, transparent pricing, and written warranty on every job.",
     happyClients: "Happy Clients", yearsExp: "Years Experience", servicesOffered: "Services Offered",
     valuesLabel: "Our Values", valuesTitle: "What Drives Us Every Day",
     teamLabel: "Our Team", teamTitle: "The Experts Behind Technical Stars",
@@ -34,7 +34,7 @@ const content = {
     ],
     team: [
       { name: "Afzaal", role: "Lead AC Technician", bio: "10+ years specializing in split and central AC systems across Riyadh" },
-      { name: "Irfan", role: "Plumbing & Electrical Expert", bio: "Certified professional with expertise in leak detection and electrical panels" },
+      { name: "Irfan", role: "AC Installation Expert", bio: "Certified professional with expertise in precise unit mounting and piping systems" },
       { name: "Sultan", role: "Washing Machine Specialist", bio: "Trained in all major brands with a focus on fast same-day repairs" },
     ]
   },
@@ -44,7 +44,7 @@ const content = {
     heroSub: "خبراء خدمة المنزل الموثوقون في الرياض منذ 2015",
     storyLabel: "قصتنا", storyTitle: "10 سنوات من خدمة منازل الرياض",
     storyP1: "تأسست نجوم التقنية في عام 2015 بمهمة بسيطة — تقديم خدمات إصلاح منزلية سريعة وصادقة وعالية الجودة للعائلات في جميع أنحاء الرياض. ما بدأ كفريق صغير لإصلاح المكيفات نمى ليصبح شركة صيانة منزلية متكاملة يثق بها مئات الأسر.",
-    storyP2: "اليوم، يتعامل فريقنا من الفنيين المعتمدين مع كل شيء من تركيب وإصلاح المكيفات إلى السباكة والأعمال الكهربائية وخدمة الغسالات. نفخر بوقت استجابتنا الذي يبلغ 60 دقيقة والأسعار الشفافة والضمان المكتوب في كل مهمة.",
+    storyP2: "اليوم، يتعامل فريقنا من الفنيين المعتمدين مع كل شيء من تركيب وإصلاح وتنظيف المكيفات إلى خدمة الغسالات. نفخر بوقت استجابتنا الذي يبلغ 60 دقيقة والأسعار الشفافة والضمان المكتوب في كل مهمة.",
     happyClients: "عميل سعيد", yearsExp: "سنوات خبرة", servicesOffered: "خدمات مقدمة",
     valuesLabel: "قيمنا", valuesTitle: "ما يدفعنا كل يوم",
     teamLabel: "فريقنا", teamTitle: "الخبراء وراء نجوم التقنية",
@@ -56,7 +56,7 @@ const content = {
     ],
     team: [
       { name: "أفعال", role: "فني مكيفات رئيسي", bio: "أكثر من 10 سنوات متخصص في أنظمة المكيفات المنفصلة والمركزية في الرياض" },
-      { name: "إرفان", role: "خبير سباكة وكهرباء", bio: "محترف معتمد بخبرة في كشف التسربات واللوحات الكهربائية" },
+      { name: "إرفان", role: "خبير تركيب التكييف", bio: "محترف معتمد بخبرة في التركيب الدقيق للوحدات وأنظمة التمديدات" },
       { name: "سلطان", role: "أخصائي غسالات", bio: "مدرب على جميع العلامات التجارية الكبرى مع التركيز على الإصلاحات السريعة في نفس اليوم" },
     ]
   }
@@ -109,7 +109,7 @@ const About = () => {
                 <p className="text-xs text-gray-600 mt-1">{t.yearsExp}</p>
               </div>
               <div className="text-center lg:text-start">
-                <span className="text-2xl font-bold text-brand-cta">6</span>
+                <span className="text-2xl font-bold text-brand-cta">4</span>
                 <p className="text-xs text-gray-600 mt-1">{t.servicesOffered}</p>
               </div>
             </div>
@@ -154,7 +154,7 @@ const About = () => {
               const images = [teamAfzaal, teamIrfan, teamSultan];
               const alts = [
                 lang === "ar" ? "أفعال - فني مكيفات رئيسي" : "Afzaal - Lead AC Technician at Technical Stars",
-                lang === "ar" ? "إرفان - خبير سباكة وكهرباء" : "Irfan - Plumbing and Electrical Expert at Technical Stars",
+                lang === "ar" ? "إرفان - خبير تركيب التكييف" : "Irfan - AC Installation Expert at Technical Stars",
                 lang === "ar" ? "سلطان - أخصائي غسالات" : "Sultan - Washing Machine Specialist at Technical Stars"
               ];
               return (
