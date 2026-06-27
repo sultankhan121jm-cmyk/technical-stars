@@ -21,7 +21,7 @@ const translations = {
       whatsapp: "WhatsApp Us",
       licensed: "Licensed & Certified",
       insured: "Fully Insured",
-      response60: "30 Min Response",
+      response60: "60 Min Response",
       stats: {
         happyClients: "Happy Clients",
         yearsExp: "Years Experience",

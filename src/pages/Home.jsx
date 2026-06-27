@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -314,6 +314,68 @@ const HowItWorksSection = () => {
   );
 };
 
+// ────────────────────────────────────────────────────────────
+// ── NEW SECTION: Fast Vertical Carousel ─────────────────────
+// ────────────────────────────────────────────────────────────
+const WorkGallerySection = () => {
+  const { lang } = useLang();
+  const isRtl = lang === "ar";
+
+  // Fallback text for the section header
+  const label = isRtl ? "سجل الأعمال" : "Our Work";
+  const title = isRtl ? "فريقنا في العمل" : "Our Team in Action";
+
+  // Add your vertical images here
+  const galleryImages = [
+    "/images/work-1.jpg",
+    "/images/work-2.jpg",
+    "/images/work-3.jpg",
+    "/images/work-4.jpg",
+    "/images/work-5.jpg",
+    "/images/work-6.jpg"
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // Fast speed: changes every 1.8 seconds
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
+    }, 1800);
+
+    return () => clearInterval(timer);
+  }, [galleryImages.length]);
+
+  // Animation direction based on RTL
+  const slideDirection = isRtl ? -100 : 100;
+
+  return (
+    <section className="py-24 bg-slate-50 relative overflow-hidden border-t border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-5 lg:px-16">
+        <SectionHead label={label} title={title} center={true} />
+
+        {/* Carousel Container: Fixed to a vertical aspect ratio (3/4) */}
+        <div className="relative mx-auto w-full max-w-sm h-[550px] md:h-[650px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-100">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentIndex}
+              src={galleryImages[currentIndex]}
+              alt={`Work ${currentIndex + 1}`}
+              className="absolute inset-0 w-full h-full object-cover"
+              initial={{ opacity: 0, x: slideDirection }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -slideDirection }}
+              transition={{ duration: 0.4, ease: "easeInOut" }} // Fast transition
+            />
+          </AnimatePresence>
+
+          {/* No text or details on the image as requested */}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const TestimonialsSection = () => {
   const { t } = useLang();
   return (
@@ -465,6 +527,10 @@ const Home = () => {
       <ServicesSection />
       <WhyChooseUsSection />
       <HowItWorksSection />
+
+      {/* ── FAST VERTICAL CAROUSEL SECTION ── */}
+      <WorkGallerySection />
+
       <TestimonialsSection />
       <ServiceAreaTeaser />
       <FAQSection />
