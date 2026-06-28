@@ -14,7 +14,7 @@ import acInstallImg from "../assets/images/service-ac-installation.jpg";
 import acCleanImg from "../assets/images/service-ac-cleaning.jpg";
 import washingImg from "../assets/images/service-washing-machine.jpg";
 
-// --- NEW IMAGE IMPORTS (Make sure these match your file names exactly) ---
+// --- NEW IMAGE IMPORTS ---
 import centralAcCleanImg from "../assets/images/central-ac-cleaning.jpg";
 import windowAcCleanImg from "../assets/images/window-ac-cleaning.jpg";
 
@@ -76,7 +76,6 @@ const ServiceDetailPage = ({ slug }) => {
     fullWarrantyDesc: isAr ? "ضمان مكتوب على جميع القطع وأجور العمالة" : "Written warranty on all parts and labor",
     expertTeam: isAr ? "فريق خبراء" : "Expert Team",
     expertTeamDesc: isAr ? "محترفون معتمدون بخبرة تزيد عن 10 سنوات" : "Certified professionals with 10+ years experience",
-    // NEW TEXT FOR AC CLEANING IMAGES
     ourWork: isAr ? "عملنا" : "Our Work",
     acCleanTitle: isAr ? "نظافة احترافية لكل أنواع المكيفات" : "Professional Cleaning for All AC Types",
     centralAcTitle: isAr ? "تنظيف المكيف المركزي" : "Central AC Cleaning",
@@ -84,7 +83,8 @@ const ServiceDetailPage = ({ slug }) => {
   };
 
   return (
-    <main dir={isAr ? "rtl" : "ltr"}>
+    // ADDED overflow-x-hidden HERE to prevent any weird side-scrolling
+    <main dir={isAr ? "rtl" : "ltr"} className="overflow-x-hidden">
       {/* Section 1: Hero */}
       <section className="bg-brand-primary py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -155,8 +155,9 @@ const ServiceDetailPage = ({ slug }) => {
       {/* NEW SECTION: AC Cleaning Image Gallery (Only shows for ac-cleaning) */}
       {/* ============================================================= */}
       {slug === 'ac-cleaning' && (
-        <section className="bg-white py-16 md:py-20 border-t border-brand-light">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+        <section className="bg-white py-16 md:py-20">
+          {/* Changed lg:px-16 to lg:px-8 here to reduce side padding */}
+          <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-8">
             <motion.div
               variants={fadeInUp}
               initial="hidden"
