@@ -169,6 +169,16 @@ const Contact = () => {
       const result = await response.json();
 
       if (result.success) {
+        // ── GOOGLE ADS EVENT CONVERSION TRACKING ──
+        if (window.gtag) {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-18280264840/4i9bCICK8sYcEIjp2oxE',
+            'value': 1.0,
+            'currency': 'SAR'
+          });
+        }
+        // ──────────────────────────────────────────
+
         setIsSuccess(true);
         reset();
       } else {
@@ -195,8 +205,8 @@ const Contact = () => {
             </nav>
             <h1 className="mt-2 text-3xl md:text-4xl lg:text-5xl font-bold text-white">{t.heroTitle}</h1>
             <p className="mt-3 text-sm md:text-base text-brand-light max-w-2xl mx-auto">{t.heroDesc}</p>
-            <div className="w-16 h-1 bg-[#EF9F27] mx-auto mt-4" />
-            <img src={contactBanner} alt="Technical Stars team" loading="lazy" className="mt-8 max-w-4xl mx-auto w-full rounded-2xl object-cover max-h-[300px] md:max-h-[400px] ring-4 ring-[#EF9F27] ring-offset-4 ring-offset-[#0A1F3C]" />
+            <div className="w-16 h-1 bg-brand-accent mx-auto mt-4" />
+            <img src={contactBanner} alt="Technical Stars team" loading="lazy" className="mt-8 max-w-4xl mx-auto w-full rounded-2xl object-cover max-h-[300px] md:max-h-[400px] ring-4 ring-brand-accent ring-offset-4 ring-offset-brand-primary" />
           </motion.div>
         </div>
       </section>
@@ -210,7 +220,7 @@ const Contact = () => {
             <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <span className="text-brand-accent font-bold text-xs tracking-widest uppercase">{t.touchLabel}</span>
               <h2 className="mt-3 text-2xl md:text-3xl font-bold text-brand-primary">{t.touchTitle}</h2>
-              <div className="w-16 h-1 bg-[#EF9F27] mt-3" />
+              <div className="w-16 h-1 bg-brand-accent mt-3" />
               <p className="mt-4 text-sm md:text-base text-gray-500 leading-relaxed">{t.touchDesc}</p>
             </motion.div>
 
@@ -285,7 +295,7 @@ const Contact = () => {
                   </div>
 
                   {/* Submit Button */}
-                  <button type="submit" disabled={isSubmitting} className="w-full min-h-[52px] bg-[#EF9F27] text-brand-primary font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-brand-primary hover:text-white transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed">
+                  <button type="submit" disabled={isSubmitting} className="w-full min-h-[52px] bg-brand-accent text-brand-primary font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-brand-primary hover:text-white transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed">
                     {isSubmitting ? (
                       <><FaSpinner className="animate-spin text-lg" /> {t.sending}</>
                     ) : (
@@ -312,7 +322,7 @@ const Contact = () => {
       <section className="bg-white">
         <div className="bg-brand-primary py-4 px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <span className="text-white text-sm md:text-base text-center sm:text-start">{t.mapText}</span>
-          <a href="https://maps.google.com/?q=24.818361,46.656472" target="_blank" rel="noopener noreferrer" className="bg-[#EF9F27] text-brand-primary font-bold px-4 py-2 rounded-lg text-sm hover:brightness-110 transition-all min-h-[44px] flex items-center justify-center">
+          <a href="https://maps.google.com/?q=24.818361,46.656472" target="_blank" rel="noopener noreferrer" className="bg-brand-accent text-brand-primary font-bold px-4 py-2 rounded-lg text-sm hover:brightness-110 transition-all min-h-[44px] flex items-center justify-center">
             {t.getDirections}
           </a>
         </div>
