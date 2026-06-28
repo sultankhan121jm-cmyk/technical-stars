@@ -6,15 +6,19 @@ import {
 } from "react-icons/fa";
 import CTABanner from "./CTABanner";
 import services from "../data/services";
-import { useLang } from "../contexts/LanguageContext"; // ADDED
+import { useLang } from "../contexts/LanguageContext";
 
-// --- NEW IMAGE IMPORTS ---
+// --- EXISTING IMAGE IMPORTS ---
 import acRepairImg from "../assets/images/service-ac-repair.jpg";
 import acInstallImg from "../assets/images/service-ac-installation.jpg";
 import acCleanImg from "../assets/images/service-ac-cleaning.jpg";
 import washingImg from "../assets/images/service-washing-machine.jpg";
 
-// --- NEW IMAGE MAP ---
+// --- NEW IMAGE IMPORTS (Make sure these match your file names exactly) ---
+import centralAcCleanImg from "../assets/images/central-ac-cleaning.jpg";
+import windowAcCleanImg from "../assets/images/window-ac-cleaning.jpg";
+
+// --- IMAGE MAP ---
 const serviceImages = {
   'ac-repair': acRepairImg,
   'ac-installation': acInstallImg,
@@ -38,8 +42,8 @@ const getLocalized = (content, lang) => {
 };
 
 const ServiceDetailPage = ({ slug }) => {
-  const { lang } = useLang(); // ADDED
-  const isAr = lang === 'ar'; // ADDED helper for static text
+  const { lang } = useLang();
+  const isAr = lang === 'ar';
 
   const service = services.find((s) => s.slug === slug);
 
@@ -53,12 +57,10 @@ const ServiceDetailPage = ({ slug }) => {
 
   const Icon = serviceIconMap[service.iconName] || FaWrench;
 
-  // Extract localized content dynamically
   const fullDesc = getLocalized(service.fullDesc, lang);
   const features = getLocalized(service.features, lang);
   const safeFeatures = Array.isArray(features) ? features : [];
 
-  // Bilingual Static Text
   const staticText = {
     home: isAr ? "الرئيسية" : "Home",
     services: isAr ? "الخدمات" : "Services",
@@ -74,6 +76,11 @@ const ServiceDetailPage = ({ slug }) => {
     fullWarrantyDesc: isAr ? "ضمان مكتوب على جميع القطع وأجور العمالة" : "Written warranty on all parts and labor",
     expertTeam: isAr ? "فريق خبراء" : "Expert Team",
     expertTeamDesc: isAr ? "محترفون معتمدون بخبرة تزيد عن 10 سنوات" : "Certified professionals with 10+ years experience",
+    // NEW TEXT FOR AC CLEANING IMAGES
+    ourWork: isAr ? "عملنا" : "Our Work",
+    acCleanTitle: isAr ? "نظافة احترافية لكل أنواع المكيفات" : "Professional Cleaning for All AC Types",
+    centralAcTitle: isAr ? "تنظيف المكيف المركزي" : "Central AC Cleaning",
+    windowAcTitle: isAr ? "تنظيف مكيف النافذة" : "Window AC Cleaning",
   };
 
   return (
@@ -143,6 +150,69 @@ const ServiceDetailPage = ({ slug }) => {
           </motion.div>
         </div>
       </section>
+
+      {/* ============================================================= */}
+      {/* NEW SECTION: AC Cleaning Image Gallery (Only shows for ac-cleaning) */}
+      {/* ============================================================= */}
+      {slug === 'ac-cleaning' && (
+        <section className="bg-white py-16 md:py-20 border-t border-brand-light">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <span className="text-brand-accent font-bold text-xs tracking-widest uppercase">{staticText.ourWork}</span>
+              <h2 className="mt-3 text-2xl md:text-3xl font-bold text-brand-primary">{staticText.acCleanTitle}</h2>
+              <div className="w-16 h-1 bg-[#EF9F27] mt-3 mx-auto" />
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Central AC Image */}
+              <motion.div
+                variants={fadeInLeft}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="group relative overflow-hidden rounded-2xl shadow-lg"
+              >
+                <img
+                  src={centralAcCleanImg}
+                  alt="Central AC Cleaning Service"
+                  className="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/80 to-transparent flex items-end p-6">
+                  <h3 className="text-white text-xl md:text-2xl font-bold">{staticText.centralAcTitle}</h3>
+                </div>
+              </motion.div>
+
+              {/* Window AC Image */}
+              <motion.div
+                variants={fadeInRight}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="group relative overflow-hidden rounded-2xl shadow-lg"
+              >
+                <img
+                  src={windowAcCleanImg}
+                  alt="Window AC Cleaning Service"
+                  className="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/80 to-transparent flex items-end p-6">
+                  <h3 className="text-white text-xl md:text-2xl font-bold">{staticText.windowAcTitle}</h3>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      )}
+      {/* ============================================================= */}
 
       {/* Section 3: Why Choose Us */}
       <section className="bg-brand-primary py-16 md:py-20">
