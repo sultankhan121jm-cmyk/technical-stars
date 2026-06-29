@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaPhone } from "react-icons/fa";
 import { useLang } from "../contexts/LanguageContext";
+import { trackEvent } from "../utils/trackEvent";
 
 const FloatingButtons = () => {
   const { lang } = useLang();
 
-  // Custom animation for staggered entrance
   const buttonVariants = {
     hidden: { scale: 0, y: 20, opacity: 0 },
     visible: (i) => ({
@@ -26,13 +26,19 @@ const FloatingButtons = () => {
 
       {/* Call Button */}
       <motion.a
-        href="tel:+966556380709"
+        https://wa.me/966556380709?text=مرحباً%2C%20وجدتكم%20عبر%20الموقع%20الإلكتروني%20وأحتاج%20إلى%20خدمة%20تكييف
         custom={0}
         variants={buttonVariants}
         initial="hidden"
         animate="visible"
         whileHover={{ scale: 1.1, y: -3 }}
         whileTap={{ scale: 0.9 }}
+        onClick={() =>
+          trackEvent("call_button_click", {
+            event_label: "Floating Call Button",
+            page_location: window.location.pathname,
+          })
+        }
         className="relative w-14 h-14 rounded-full bg-white shadow-lg shadow-black/10 border border-gray-200 text-brand-blue text-xl flex items-center justify-center hover:shadow-xl transition-shadow"
         aria-label={lang === "ar" ? "اتصل بنا" : "Call us"}
       >
@@ -57,13 +63,13 @@ const FloatingButtons = () => {
             duration: 1.5,
             repeat: Infinity,
             ease: "easeOut",
-            delay: 0.6 // Staggered delay for a continuous wave effect
+            delay: 0.6,
           }}
         />
 
         {/* Actual Button */}
         <motion.a
-          href="https://wa.me/966556380709"
+          https://wa.me/966556380709?text=مرحباً%2C%20وجدتكم%20عبر%20الموقع%20الإلكتروني%20وأحتاج%20إلى%20خدمة%20تكييف
           target="_blank"
           rel="noopener noreferrer"
           custom={1}
@@ -72,6 +78,12 @@ const FloatingButtons = () => {
           animate="visible"
           whileHover={{ scale: 1.1, y: -3 }}
           whileTap={{ scale: 0.9 }}
+          onClick={() =>
+            trackEvent("whatsapp_button_click", {
+              event_label: "Floating WhatsApp Button",
+              page_location: window.location.pathname,
+            })
+          }
           className="relative z-10 w-14 h-14 rounded-full bg-[#25D366] text-white text-2xl flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:shadow-[#25D366]/50 transition-shadow"
           aria-label="WhatsApp"
         >

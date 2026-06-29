@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+const fs = require('fs');
+
+const content = `import { motion } from "framer-motion";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
 import { useLang } from "../contexts/LanguageContext";
 import { trackEvent } from "../utils/trackEvent";
@@ -38,7 +40,6 @@ const CTABanner = () => {
     <section className="relative bg-[#EF9F27] py-16 md:py-20 overflow-hidden">
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#0A1F3C]/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
-
       <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,16 +50,13 @@ const CTABanner = () => {
           <span className="inline-block bg-[#0A1F3C] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">
             {text.title}
           </span>
-
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0A1F3C] leading-tight">
             {text.headline}
           </h2>
-
           <p className="mt-4 text-[#0A1F3C]/80 text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-medium">
             {text.subtitle}
           </p>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,8 +64,7 @@ const CTABanner = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          {/* Call Now Button */}
-          <a
+          
             href="tel:+966556380709"
             onClick={handleCallClick}
             className="w-full sm:w-auto min-h-[52px] px-8 py-3.5 bg-[#0A1F3C] text-white font-bold rounded-xl hover:bg-[#0d2847] transition-all duration-200 flex items-center justify-center gap-2.5 shadow-lg shadow-black/20"
@@ -75,9 +72,7 @@ const CTABanner = () => {
             <FaPhone className="text-sm" />
             <span className="whitespace-nowrap">{text.callNow}</span>
           </a>
-
-          {/* WhatsApp Button */}
-          <a
+          
             href="https://wa.me/966556380709"
             target="_blank"
             rel="noopener noreferrer"
@@ -85,27 +80,3 @@ const CTABanner = () => {
             className="w-full sm:w-auto min-h-[52px] px-8 py-3.5 bg-transparent border-2 border-[#0A1F3C] text-[#0A1F3C] font-bold rounded-xl hover:bg-[#0A1F3C] hover:text-white transition-all duration-200 flex items-center justify-center gap-2.5"
           >
             <FaWhatsapp className="text-base" />
-            <span className="whitespace-nowrap">{text.whatsapp}</span>
-          </a>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-[#0A1F3C]/70 font-semibold"
-        >
-          {text.tags.map((tag, i) => (
-            <span key={i} className="flex items-center gap-1.5">
-              {tag}
-              {i < text.tags.length - 1 && <span className="text-white">•</span>}
-            </span>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
-export default CTABanner;
