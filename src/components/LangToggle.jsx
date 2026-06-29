@@ -8,8 +8,8 @@ const LangToggle = () => {
       {/* Left Label */}
       <span
         className={`text-xs font-serif tracking-wider transition-colors duration-300 ${lang === "en"
-            ? "text-slate-900 dark:text-white font-bold"
-            : "text-slate-400 dark:text-slate-600"
+          ? "text-slate-900 dark:text-white font-bold"
+          : "text-slate-400 dark:text-slate-600"
           }`}
       >
         ENGLISH
@@ -24,8 +24,8 @@ const LangToggle = () => {
         {/* Elastic Fluid Slide Puck */}
         <div
           className={`absolute top-[2px] bottom-[2px] h-[20px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] flex items-center justify-center group-active:w-[26px] ${lang === "ar"
-              ? "left-[calc(100%-22px)] w-[20px] bg-amber-400 shadow-[0_1px_3px_rgba(0,0,0,0.4)] group-active:left-[calc(100%-28px)]"
-              : "left-[2px] w-[20px] bg-sky-400 shadow-[0_1px_3px_rgba(0,0,0,0.4)]"
+            ? "left-[calc(100%-22px)] w-[20px] bg-amber-400 shadow-[0_1px_3px_rgba(0,0,0,0.4)] group-active:left-[calc(100%-28px)]"
+            : "left-[2px] w-[20px] bg-sky-400 shadow-[0_1px_3px_rgba(0,0,0,0.4)]"
             }`}
         >
           {/* Inner Mini Glyphs */}
@@ -38,8 +38,8 @@ const LangToggle = () => {
       {/* Right Label */}
       <span
         className={`text-sm font-serif transition-colors duration-300 ${lang === "ar"
-            ? "text-slate-900 dark:text-white font-bold"
-            : "text-slate-400 dark:text-slate-600"
+          ? "text-slate-900 dark:text-white font-bold"
+          : "text-slate-400 dark:text-slate-600"
           }`}
       >
         العربية
