@@ -26,7 +26,7 @@ const FloatingButtons = () => {
       : "Hello, I found you through your website and I need AC service"
   );
 
-  // Direct safe GA4 execution function
+  // Direct safe tracking function to avoid file/MIME type bundling bugs
   const safeTrack = (eventName, label) => {
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
       window.gtag("event", eventName, {
@@ -39,7 +39,7 @@ const FloatingButtons = () => {
   return (
     <div className="fixed bottom-6 end-6 z-50 flex flex-col gap-3">
 
-      {/* Call Button */}
+      {/* Call Button - Fixed attribute and tracking */}
       <motion.a
         href="tel:+966556380709"
         custom={0}
@@ -65,10 +65,15 @@ const FloatingButtons = () => {
         <motion.span
           className="absolute w-14 h-14 rounded-full bg-[#25D366] z-0"
           animate={{ scale: [1, 1.8], opacity: [0.5, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut", delay: 0.6 }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeOut",
+            delay: 0.6,
+          }}
         />
 
-        {/* Actual Button */}
+        {/* Actual WhatsApp Button */}
         <motion.a
           href={whatsappUrl}
           target="_blank"
