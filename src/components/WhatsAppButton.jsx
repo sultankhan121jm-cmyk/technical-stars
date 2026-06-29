@@ -5,11 +5,10 @@ const WhatsAppButton = () => {
   return (
     <motion.div
       className="fixed bottom-6 right-6 z-50"
-      /* Framer Motion whileHover to trigger the tooltip animation */
       whileHover="showTooltip"
       initial="hideTooltip"
     >
-      {/* ── Pulsing Ring Animation ── */}
+      {/* Pulsing Ring Animation */}
       <motion.span
         className="absolute inset-0 rounded-full bg-[#25D366]"
         animate={{
@@ -23,7 +22,7 @@ const WhatsAppButton = () => {
         }}
       />
 
-      {/* ── Main WhatsApp Button ── */}
+      {/* Main WhatsApp Button */}
       <a
         href="https://wa.me/966556380709"
         target="_blank"
@@ -34,7 +33,7 @@ const WhatsAppButton = () => {
         <FaWhatsapp />
       </a>
 
-      {/* ── Tooltip ── */}
+      {/* Tooltip */}
       <motion.span
         className="absolute right-full mr-3 top-1/2 -translate-y-1/2 whitespace-nowrap bg-white text-brand-primary text-sm font-medium px-3 py-1.5 rounded-lg shadow-xl pointer-events-none"
         variants={{

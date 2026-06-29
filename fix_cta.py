@@ -9,6 +9,10 @@ const CTABanner = () => {
   const { lang } = useLang();
   const isAr = lang === "ar";
 
+  const waLink = isAr
+    ? "https://wa.me/966556380709?text=مرحباً%2C%20وجدتكم%20عبر%20الموقع%20الإلكتروني%20وأحتاج%20إلى%20خدمة%20تكييف"
+    : "https://wa.me/966556380709?text=Hi%2C%20I%20found%20you%20on%20your%20website%20and%20need%20AC%20service";
+
   const handleCallClick = () => {
     trackEvent("call_button_click", {
       event_label: "CTA Banner - Call Now",
@@ -73,10 +77,36 @@ const CTABanner = () => {
             <span className="whitespace-nowrap">{text.callNow}</span>
           </a>
           
-            href="https://wa.me/966556380709"
+            href={waLink}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleWAClick}
             className="w-full sm:w-auto min-h-[52px] px-8 py-3.5 bg-transparent border-2 border-[#0A1F3C] text-[#0A1F3C] font-bold rounded-xl hover:bg-[#0A1F3C] hover:text-white transition-all duration-200 flex items-center justify-center gap-2.5"
           >
             <FaWhatsapp className="text-base" />
+            <span className="whitespace-nowrap">{text.whatsapp}</span>
+          </a>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-[#0A1F3C]/70 font-semibold"
+        >
+          {text.tags.map((tag, i) => (
+            <span key={i} className="flex items-center gap-1.5">
+              {tag}
+              {i < text.tags.length - 1 && <span className="text-white">•</span>}
+            </span>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default CTABanner;`;
+
+fs.writeFileSync('src/components/CTABanner.jsx', content, 'utf8');
+console.log('CTABanner done!');
