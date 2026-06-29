@@ -36,8 +36,9 @@ const CTABanner = () => {
 
   return (
     <section className="relative bg-[#EF9F27] py-16 md:py-20 overflow-hidden">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#0A1F3C]/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
+      {/* Decorative blobs made pointer-events-none to prevent blocking button clicks */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#0A1F3C]/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-8 text-center">
         <motion.div

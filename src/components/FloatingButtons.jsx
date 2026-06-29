@@ -21,12 +21,18 @@ const FloatingButtons = () => {
     }),
   };
 
+  const whatsappUrl = "https://wa.me/966556380709?text=" + encodeURIComponent(
+    lang === "ar"
+      ? "مرحباً، وجدتكم عبر الموقع الإلكتروني وأحتاج إلى خدمة تكييف"
+      : "Hello, I found you through your website and I need AC service"
+  );
+
   return (
     <div className="fixed bottom-6 end-6 z-50 flex flex-col gap-3">
 
       {/* Call Button */}
       <motion.a
-        https://wa.me/966556380709?text=مرحباً%2C%20وجدتكم%20عبر%20الموقع%20الإلكتروني%20وأحتاج%20إلى%20خدمة%20تكييف
+        href="tel:+966556380709"
         custom={0}
         variants={buttonVariants}
         initial="hidden"
@@ -39,7 +45,7 @@ const FloatingButtons = () => {
             page_location: window.location.pathname,
           })
         }
-        className="relative w-14 h-14 rounded-full bg-white shadow-lg shadow-black/10 border border-gray-200 text-brand-blue text-xl flex items-center justify-center hover:shadow-xl transition-shadow"
+        className="relative w-14 h-14 rounded-full bg-white shadow-lg shadow-black/10 border border-gray-200 text-[#0A1F3C] text-xl flex items-center justify-center hover:shadow-xl transition-shadow"
         aria-label={lang === "ar" ? "اتصل بنا" : "Call us"}
       >
         <FaPhone />
@@ -69,7 +75,7 @@ const FloatingButtons = () => {
 
         {/* Actual Button */}
         <motion.a
-          https://wa.me/966556380709?text=مرحباً%2C%20وجدتكم%20عبر%20الموقع%20الإلكتروني%20وأحتاج%20إلى%20خدمة%20تكييف
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           custom={1}
