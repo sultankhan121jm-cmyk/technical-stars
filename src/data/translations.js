@@ -50,6 +50,7 @@ const translations = {
       "ac-installation": "AC Installation",
       "ac-cleaning": "AC Cleaning",
       "washing-machine": "Washing Machine Repair",
+      "ac-gas-filling": "AC Gas Filling",
     },
 
     // Why Choose Us
@@ -164,6 +165,7 @@ const translations = {
         "AC Installation": "AC Installation",
         "AC Cleaning": "AC Cleaning",
         "Washing Machine Repair": "Washing Machine Repair",
+        "AC Gas Filling": "AC Gas Filling",
         Other: "Other",
       },
       validation: {
@@ -295,6 +297,10 @@ const translations = {
         shortDesc: "Fast fixes for all washing machine problems.",
         fullDesc: "Whether your washing machine won't spin, drain, or turn on at all, our technicians can handle it. We repair top-load and front-load machines from all major brands, using genuine parts and offering reliable same-day service across Riyadh.",
       },
+      "ac-gas-filling": {
+        shortDesc: "Professional refrigerant gas refill for all AC types with leak detection.",
+        fullDesc: "Is your AC not cooling properly? It might be low on refrigerant gas. Our certified technicians provide complete gas filling services for split ACs, window ACs, and central systems. We use premium R-22, R-410A, and R-32 refrigerants with full leak detection and pressure testing to ensure long-lasting cooling performance.",
+      },
     },
 
     // Services features
@@ -322,6 +328,20 @@ const translations = {
         "Motor and belt replacement",
         "Door lock and seal fixing",
         "Control board diagnosis and repair",
+        "Water inlet valve replacement",
+        "Drum bearing and suspension repair",
+        "Pump and hose leak fix",
+        "Noise and vibration troubleshooting",
+      ],
+      "ac-gas-filling": [
+        "Complete refrigerant gas top-up & refill",
+        "Digital leak detection with UV dye",
+        "Pressure testing before & after filling",
+        "Premium R-22, R-410A, R-32 gases",
+        "Compressor performance check",
+        "Pipe & joint inspection for leaks",
+        "Cooling performance verification",
+        "90-day gas warranty included",
       ],
     },
   },
@@ -377,6 +397,7 @@ const translations = {
       "ac-installation": "تركيب التكييف",
       "ac-cleaning": "تنظيف التكييف",
       "washing-machine": "إصلاح الغسالة",
+      "ac-gas-filling": "تعبئة غاز المكيفات",
     },
 
     // Why Choose Us
@@ -491,6 +512,7 @@ const translations = {
         "AC Installation": "تركيب التكييف",
         "AC Cleaning": "تنظيف التكييف",
         "Washing Machine Repair": "إصلاح الغسالة",
+        "AC Gas Filling": "تعبئة غاز المكيفات",
         Other: "أخرى",
       },
       validation: {
@@ -622,6 +644,10 @@ const translations = {
         shortDesc: "إصلاح سريع لجميع مشاكل الغسالة.",
         fullDesc: "سواء لم تدور الغسالة أو لم تصرف أو لم تعمل إطلاقاً، يمكن لفنيينا التعامل معها. نصلح الغسالات العلوية والأمامية من جميع العلامات التجارية الكبرى باستخدام قطع أصلية مع خدمة موثوقة في نفس اليوم في الرياض.",
       },
+      "ac-gas-filling": {
+        shortDesc: "تعبئة غاز التبريد الاحترافية لجميع أنواع المكيفات مع كشف التسريبات.",
+        fullDesc: "هل مكيفك لا يبرد بشكل صحيح؟ ربما ينقصه غاز التبريد. يقدم فنيونا المعتمدون خدمة تعبئة غاز شاملة للمكيفات المنفصلة ومكيفات النوافذ والأنظمة المركزية. نستخدم غازات R-22 و R-410A و R-32 عالية الجودة مع كشف كامل للتسريبات واختبار الضغط لضمان أداء تبريد مستدام.",
+      },
     },
 
     // Services features
@@ -645,10 +671,24 @@ const translations = {
         "فحص الأداء بعد التنظيف",
       ],
       "washing-machine": [
-        "إصلاح مشاكل الصرف والدوران",
+        "إصلاح مشاكل التصريف والدوران",
         "استبدال المحرك والحزام",
         "إصلاح قفل وباب الغسالة",
         "تشخيص وإصلاح لوحة التحكم",
+        "استبدال صمام دخول الماء",
+        "إصلاح محامل الطبل ونظام التعليق",
+        "إصلاح تسربات المضخة والخراطيم",
+        "فحص وإصلاح الضوضاء والاهتزاز",
+      ],
+      "ac-gas-filling": [
+        "تعبئة وملء غاز التبريد بالكامل",
+        "كشف التسريبات الرقمي بصبغة الأشعة فوق البنفسجية",
+        "اختبار الضغط قبل وبعد التعبئة",
+        "غازات R-22 و R-410A و R-32 عالية الجودة",
+        "فحص أداء الضاغط",
+        "فحص الأنابيب والوصلات للتسريبات",
+        "التحقق من أداء التبريد",
+        "ضمان غاز لمدة 90 يومًا",
       ],
     },
   },

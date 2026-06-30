@@ -46,12 +46,63 @@ const services = [
       ar: "سواء لم تدور غسالتك أو لم تصرف أو لم تعمل على الإطلاق، يستطيع فنيونا التعامل معها. نصلح الغسالات ذات التحميل العلوي والسفلي من جميع العلامات التجارية الكبرى باستخدام قطع أصلية مع خدمة موثوقة في نفس اليوم في الرياض.",
     },
     features: {
-      en: ["Drain and spin issue repair", "Motor and belt replacement", "Door lock and seal fixing", "Control board diagnosis and repair"],
-      ar: ["إصلاح مشاكل التصريف والدوران", "استبدال المحرك والحزام", "إصلاح قفل الباب والحشية", "تشخيص وإصلاح لوحة التحكم"],
+      en: [
+        "Drain and spin issue repair",
+        "Motor and belt replacement",
+        "Door lock and seal fixing",
+        "Control board diagnosis and repair",
+        "Water inlet valve replacement",
+        "Drum bearing and suspension repair",
+        "Pump and hose leak fix",
+        "Noise and vibration troubleshooting",
+      ],
+      ar: [
+        "إصلاح مشاكل التصريف والدوران",
+        "استبدال المحرك والحزام",
+        "إصلاح قفل الباب والحشية",
+        "تشخيص وإصلاح لوحة التحكم",
+        "استبدال صمام دخول الماء",
+        "إصلاح محامل الطبل ونظام التعليق",
+        "إصلاح تسربات المضخة والخراطيم",
+        "فحص وإصلاح الضوضاء والاهتزاز",
+      ],
     },
-    brands: ["Samsung", "LG", "Gree", "Carrier", "York", "Midea"],
+    brands: ["Samsung", "LG", "Whirlpool", "Bosch", "Haier", "Midea", "Toshiba", "Super General"],
   },
-
+  {
+    id: 5, slug: "ac-gas-filling", iconName: "FaWind",
+    shortDesc: {
+      en: "Professional refrigerant gas refill for all AC types with leak detection.",
+      ar: "تعبئة غاز التبريد الاحترافية لجميع أنواع المكيفات مع كشف التسريبات.",
+    },
+    fullDesc: {
+      en: "Is your AC not cooling properly? It might be low on refrigerant gas. Our certified technicians provide complete gas filling services for split ACs, window ACs, and central systems. We use premium R-22, R-410A, and R-32 refrigerants with full leak detection and pressure testing to ensure long-lasting cooling performance.",
+      ar: "هل مكيفك لا يبرد بشكل صحيح؟ ربما ينقصه غاز التبريد. يقدم فنيونا المعتمدون خدمة تعبئة غاز شاملة للمكيفات المنفصلة ومكيفات النوافذ والأنظمة المركزية. نستخدم غازات R-22 و R-410A و R-32 عالية الجودة مع كشف كامل للتسريبات واختبار الضغط لضمان أداء تبريد مستدام.",
+    },
+    features: {
+      en: [
+        "Complete refrigerant gas top-up & refill",
+        "Digital leak detection with UV dye",
+        "Pressure testing before & after filling",
+        "Premium R-22, R-410A, R-32 gases",
+        "Compressor performance check",
+        "Pipe & joint inspection for leaks",
+        "Cooling performance verification",
+        "90-day gas warranty included",
+      ],
+      ar: [
+        "تعبئة وملء غاز التبريد بالكامل",
+        "كشف التسريبات الرقمي بصبغة الأشعة فوق البنفسجية",
+        "اختبار الضغط قبل وبعد التعبئة",
+        "غازات R-22 و R-410A و R-32 عالية الجودة",
+        "فحص أداء الضاغط",
+        "فحص الأنابيب والوصلات للتسريبات",
+        "التحقق من أداء التبريد",
+        "ضمان غاز لمدة 90 يومًا",
+      ],
+    },
+    brands: ["Samsung", "LG", "Gree", "Carrier", "York", "Midea", "Toshiba", "Daikin"],
+  },
 ];
 
 export default services;

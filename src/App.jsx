@@ -15,6 +15,7 @@ import ACRepair from "./pages/services/ACRepair";
 import ACInstallation from "./pages/services/ACInstallation";
 import ACCleaning from "./pages/services/ACCleaning";
 import WashingMachine from "./pages/services/WashingMachine";
+import ACGasFilling from "./pages/services/ACGasFilling";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/services/ac-installation" element={<ACInstallation />} />
           <Route path="/services/ac-cleaning" element={<ACCleaning />} />
           <Route path="/services/washing-machine" element={<WashingMachine />} />
+          <Route path="/services/ac-gas-filling" element={<ACGasFilling />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
