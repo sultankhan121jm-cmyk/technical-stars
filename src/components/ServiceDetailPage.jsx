@@ -45,6 +45,7 @@ const serviceImages = {
 const defaultServiceImg = acRepairImg;
 
 // --- PROMO CONFIG MAP (data-driven, not hardcoded) ---
+// --- PROMO CONFIG MAP (data-driven, not hardcoded) ---
 const promoConfig = {
   'ac-cleaning': {
     show: true,
@@ -56,7 +57,7 @@ const promoConfig = {
   },
   'ac-repair': {
     show: true,
-    discount: '20%',
+    discount: '30%',
     showLocalProof: true,
     localProof: {
       en: "Fast AC Repair Service in North Riyadh",
@@ -67,13 +68,13 @@ const promoConfig = {
       ar: "خصم على الإصلاح",
     },
     promoDesc: {
-      en: "Get 20% OFF your first AC repair!",
-      ar: "احصل على خصم 20% على أول إصلاح مكيف!",
+      en: "Get 30% OFF your first AC repair!",
+      ar: "احصل على خصم 30% على أول إصلاح مكيف!",
     },
   },
   'ac-installation': {
     show: true,
-    discount: '15%',
+    discount: '30%',
     showLocalProof: true,
     localProof: {
       en: "Professional AC Installation in North Riyadh",
@@ -84,13 +85,13 @@ const promoConfig = {
       ar: "عرض التركيب",
     },
     promoDesc: {
-      en: "Get 15% OFF on new AC installation!",
-      ar: "احصل على خصم 15% على تركيب مكيف جديد!",
+      en: "Get 30% OFF on new AC installation!",
+      ar: "احصل على خصم 30% على تركيب مكيف جديد!",
     },
   },
   'washing-machine': {
     show: true,
-    discount: '10%',
+    discount: '30%',
     showLocalProof: true,
     localProof: {
       en: "Fast Washing Machine Repair in North Riyadh",
@@ -101,13 +102,13 @@ const promoConfig = {
       ar: "عرض الغسالات",
     },
     promoDesc: {
-      en: "Get 10% OFF your first washing machine service!",
-      ar: "احصل على خصم 10% على أول خدمة غسالة!",
+      en: "Get 30% OFF your first washing machine service!",
+      ar: "احصل على خصم 30% على أول خدمة غسالة!",
     },
   },
   'central-ac-cleaning': {
     show: true,
-    discount: '25%',
+    discount: '30%',
     showLocalProof: true,
     localProof: {
       en: "Central AC Cleaning in North Riyadh",
@@ -118,13 +119,13 @@ const promoConfig = {
       ar: "عرض المكيف المركزي",
     },
     promoDesc: {
-      en: "Get 25% OFF central AC cleaning!",
-      ar: "احصل على خصم 25% على تنظيف المكيف المركزي!",
+      en: "Get 30% OFF central AC cleaning!",
+      ar: "احصل على خصم 30% على تنظيف المكيف المركزي!",
     },
   },
   'window-ac-cleaning': {
     show: true,
-    discount: '25%',
+    discount: '30%',
     showLocalProof: true,
     localProof: {
       en: "Window AC Cleaning in North Riyadh",
@@ -135,13 +136,13 @@ const promoConfig = {
       ar: "عرض مكيف النافذة",
     },
     promoDesc: {
-      en: "Get 25% OFF window AC cleaning!",
-      ar: "احصل على خصم 25% على تنظيف مكيف النافذة!",
+      en: "Get 30% OFF window AC cleaning!",
+      ar: "احصل على خصم 30% على تنظيف مكيف النافذة!",
     },
   },
   'ac-gas-filling': {
     show: true,
-    discount: '20%',
+    discount: '30%',
     showLocalProof: true,
     localProof: {
       en: "Fast AC Gas Filling Service in North Riyadh",
@@ -152,8 +153,8 @@ const promoConfig = {
       ar: "عرض تعبئة الغاز",
     },
     promoDesc: {
-      en: "Get 20% OFF your first AC gas refill!",
-      ar: "احصل على خصم 20% على أول تعبئة غاز مكيف!",
+      en: "Get 30% OFF your first AC gas refill!",
+      ar: "احصل على خصم 30% على أول تعبئة غاز مكيف!",
     },
   },
 };

@@ -53,8 +53,6 @@ const services = [
         "Control board diagnosis and repair",
         "Water inlet valve replacement",
         "Drum bearing and suspension repair",
-        "Pump and hose leak fix",
-        "Noise and vibration troubleshooting",
       ],
       ar: [
         "إصلاح مشاكل التصريف والدوران",
@@ -63,8 +61,6 @@ const services = [
         "تشخيص وإصلاح لوحة التحكم",
         "استبدال صمام دخول الماء",
         "إصلاح محامل الطبل ونظام التعليق",
-        "إصلاح تسربات المضخة والخراطيم",
-        "فحص وإصلاح الضوضاء والاهتزاز",
       ],
     },
     brands: ["Samsung", "LG", "Whirlpool", "Bosch", "Haier", "Midea", "Toshiba", "Super General"],
@@ -87,8 +83,7 @@ const services = [
         "Premium R-22, R-410A, R-32 gases",
         "Compressor performance check",
         "Pipe & joint inspection for leaks",
-        "Cooling performance verification",
-        "90-day gas warranty included",
+
       ],
       ar: [
         "تعبئة وملء غاز التبريد بالكامل",
@@ -97,8 +92,6 @@ const services = [
         "غازات R-22 و R-410A و R-32 عالية الجودة",
         "فحص أداء الضاغط",
         "فحص الأنابيب والوصلات للتسريبات",
-        "التحقق من أداء التبريد",
-        "ضمان غاز لمدة 90 يومًا",
       ],
     },
     brands: ["Samsung", "LG", "Gree", "Carrier", "York", "Midea", "Toshiba", "Daikin"],
