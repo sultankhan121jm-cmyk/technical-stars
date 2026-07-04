@@ -16,6 +16,7 @@ import ACInstallation from "./pages/services/ACInstallation";
 import ACCleaning from "./pages/services/ACCleaning";
 import WashingMachine from "./pages/services/WashingMachine";
 import ACGasFilling from "./pages/services/ACGasFilling";
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/services/washing-machine" element={<WashingMachine />} />
           <Route path="/services/ac-gas-filling" element={<ACGasFilling />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
         <FloatingButtons />

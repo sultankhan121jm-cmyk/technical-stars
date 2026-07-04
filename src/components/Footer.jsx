@@ -29,6 +29,7 @@ const Footer = () => {
     email: "info@technicalstars.online",
     rights: isAr ? "جميع الحقوق محفوظة" : "All Rights Reserved",
     company: isAr ? "نجوم التقنية" : "Technical Stars",
+    privacyPolicy: isAr ? "سياسة الخصوصية" : "Privacy Policy",
   };
 
   return (
@@ -38,7 +39,6 @@ const Footer = () => {
         {/* Column 1: Logo & About */}
         <div>
           <Link to="/" className="inline-block">
-            {/* Removed brightness-0 invert so it doesn't break your specific logo file */}
             <img
               src={logo}
               alt="Technical Stars Logo"
@@ -97,7 +97,6 @@ const Footer = () => {
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
               <FaMapMarkerAlt className="text-[#EF9F27] mt-1 flex-shrink-0" />
-              {/* Clickable Google Maps Link for exact coordinates */}
               <a
                 href="https://maps.google.com/?q=24.818361,46.656472"
                 target="_blank"
@@ -120,8 +119,16 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-12 pt-8 border-t border-gray-800 max-w-7xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+      <div className="mt-12 pt-8 border-t border-gray-800 max-w-7xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 pb-4">
         <p>© {new Date().getFullYear()} {text.company}. {text.rights}.</p>
+        <div className="flex items-center gap-4">
+          <Link
+            to="/privacy-policy"
+            className="text-gray-500 hover:text-[#EF9F27] transition-colors duration-200 block sm:inline whitespace-nowrap"
+          >
+            {text.privacyPolicy}
+          </Link>
+        </div>
       </div>
     </footer>
   );
