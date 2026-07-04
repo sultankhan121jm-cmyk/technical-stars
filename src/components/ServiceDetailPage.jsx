@@ -345,7 +345,7 @@ const ServiceDetailPage = ({ slug }) => {
 
       {/* Section 1: The Stunning, High-Converting Hero */}
       <section className="bg-brand-primary py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EF9F27]/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3"></div>
+        {/* Removed the yellow blur background element here */}
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
 
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -369,9 +369,10 @@ const ServiceDetailPage = ({ slug }) => {
             )}
 
             <div className="flex items-center gap-4 mb-4">
+              {/* Removed yellow drop shadow (shadow-[#EF9F27]/30) from the icon container */}
               <motion.div
                 whileHover={{ rotate: 15, scale: 1.1 }}
-                className="bg-[#EF9F27] p-4 rounded-2xl flex-shrink-0 shadow-lg shadow-[#EF9F27]/30"
+                className="bg-[#EF9F27] p-4 rounded-2xl flex-shrink-0 shadow-lg"
               >
                 <Icon className="text-white text-3xl" />
               </motion.div>
