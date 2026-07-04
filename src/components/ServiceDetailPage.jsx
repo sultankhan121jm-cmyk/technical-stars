@@ -345,7 +345,6 @@ const ServiceDetailPage = ({ slug }) => {
 
       {/* Section 1: The Stunning, High-Converting Hero */}
       <section className="bg-brand-primary py-16 md:py-24 relative overflow-hidden">
-        {/* Removed the yellow blur background element here */}
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
 
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -369,7 +368,6 @@ const ServiceDetailPage = ({ slug }) => {
             )}
 
             <div className="flex items-center gap-4 mb-4">
-              {/* Removed yellow drop shadow (shadow-[#EF9F27]/30) from the icon container */}
               <motion.div
                 whileHover={{ rotate: 15, scale: 1.1 }}
                 className="bg-[#EF9F27] p-4 rounded-2xl flex-shrink-0 shadow-lg"
@@ -407,6 +405,7 @@ const ServiceDetailPage = ({ slug }) => {
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <motion.a
                 href="tel:+966556380709"
+                aria-label={isAr ? "اتصل بنا الآن لإصلاح المكيفات" : "Call us now for AC repair"}
                 whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                 className="group flex-1 min-h-[56px] flex items-center justify-center gap-3 px-8 py-4 bg-white text-brand-primary font-extrabold rounded-xl hover:bg-gray-100 transition-all duration-200 shadow-lg text-lg"
               >
@@ -414,6 +413,7 @@ const ServiceDetailPage = ({ slug }) => {
               </motion.a>
               <motion.a
                 href="https://wa.me/966556380709" target="_blank" rel="noopener noreferrer"
+                aria-label={isAr ? "تواصل معنا عبر واتساب" : "Chat with us on WhatsApp"}
                 whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                 className="flex-1 min-h-[56px] flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-white/30 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-200 text-lg"
               >
@@ -427,7 +427,16 @@ const ServiceDetailPage = ({ slug }) => {
               animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="relative"
             >
-              <img src={heroImage} alt={isAr ? `${service.title} في الرياض` : `${service.title} in Riyadh`} loading="lazy" className="w-full rounded-3xl object-cover h-[450px] md:h-[550px] shadow-2xl" />
+              {/* Added width, height, fetchpriority, and loading=eager for LCP fix */}
+              <img
+                src={heroImage}
+                alt={isAr ? `${service.title} في الرياض` : `${service.title} in Riyadh`}
+                width={1200}
+                height={896}
+                loading="eager"
+                fetchpriority="high"
+                className="w-full rounded-3xl object-cover h-[450px] md:h-[550px] shadow-2xl"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/80 via-transparent to-transparent rounded-3xl"></div>
 
               {hasPromo && (
@@ -463,7 +472,6 @@ const ServiceDetailPage = ({ slug }) => {
             <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-brand-primary">{displayIncludedTitle}</h2>
             <div className="w-16 h-1.5 bg-[#EF9F27] mt-4 rounded-full mb-10" />
 
-            {/* Changed to grid-cols-2 so it displays 2 columns on mobile as well */}
             <div className="grid grid-cols-2 gap-4 sm:gap-5">
               {safeFeatures.map((feature, index) => (
                 <motion.div
@@ -472,7 +480,6 @@ const ServiceDetailPage = ({ slug }) => {
                   whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
                   className="group bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 transition-all duration-300"
                 >
-                  {/* Adjusted layout to stack icon above text on mobile for better fit */}
                   <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
                     <div className="bg-gradient-to-br from-[#EF9F27] to-[#e08e15] p-2.5 sm:p-3 rounded-xl flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300 w-max">
                       <FaCheckCircle className="text-white text-lg sm:text-xl" />
@@ -533,7 +540,14 @@ const ServiceDetailPage = ({ slug }) => {
                   whileHover={{ y: -10 }}
                   className="group relative overflow-hidden rounded-3xl shadow-xl cursor-pointer h-[450px] md:h-[550px]"
                 >
-                  <img src={card.img} alt={card.alt} className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110" />
+                  {/* Added width and height to fix CLS */}
+                  <img
+                    src={card.img}
+                    alt={card.alt}
+                    width={800}
+                    height={600}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/60 to-transparent flex flex-col justify-end p-8 text-white">
                     <h3 className="text-2xl md:text-3xl font-extrabold drop-shadow-lg mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">{getLocalized(card.title, lang)}</h3>
                     <p className="text-white/85 text-sm md:text-base leading-relaxed opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-40 transition-all duration-500 ease-out overflow-hidden">
