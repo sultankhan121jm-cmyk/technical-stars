@@ -50,7 +50,7 @@ const translations = {
       "ac-installation": "AC Installation",
       "ac-cleaning": "AC Cleaning",
       "washing-machine": "Washing Machine Repair",
-      "ac-gas-filling": "AC Gas Filling",
+      "freon-charging": "Freon Charging",
     },
 
     // Why Choose Us
@@ -165,7 +165,7 @@ const translations = {
         "AC Installation": "AC Installation",
         "AC Cleaning": "AC Cleaning",
         "Washing Machine Repair": "Washing Machine Repair",
-        "AC Gas Filling": "AC Gas Filling",
+        "Freon Charging": "Freon Charging",
         Other: "Other",
       },
       validation: {
@@ -297,9 +297,9 @@ const translations = {
         shortDesc: "Fast fixes for all washing machine problems.",
         fullDesc: "Whether your washing machine won't spin, drain, or turn on at all, our technicians can handle it. We repair top-load and front-load machines from all major brands, using genuine parts and offering reliable same-day service across Riyadh.",
       },
-      "ac-gas-filling": {
-        shortDesc: "Professional refrigerant gas refill for all AC types with leak detection.",
-        fullDesc: "Is your AC not cooling properly? It might be low on refrigerant gas. Our certified technicians provide complete gas filling services for split ACs, window ACs, and central systems. We use premium R-22, R-410A, and R-32 refrigerants with full leak detection and pressure testing to ensure long-lasting cooling performance.",
+      "freon-charging": {
+        shortDesc: "Professional freon charging for all AC types with leak detection.",
+        fullDesc: "Is your AC not cooling properly? It might be low on freon. Our certified technicians provide complete freon charging services for split ACs, window ACs, and central systems. We use premium R-22, R-410A, and R-32 refrigerants with full leak detection and pressure testing to ensure long-lasting cooling performance.",
       },
     },
 
@@ -333,11 +333,11 @@ const translations = {
         "Pump and hose leak fix",
         "Noise and vibration troubleshooting",
       ],
-      "ac-gas-filling": [
-        "Complete refrigerant gas top-up & refill",
+      "freon-charging": [
+        "Complete freon top-up & refill",
         "Digital leak detection with UV dye",
         "Pressure testing before & after filling",
-        "Premium R-22, R-410A, R-32 gases",
+        "Premium R-22, R-410A, R-32 freon",
         "Compressor performance check",
         "Pipe & joint inspection for leaks",
         "Cooling performance verification",
@@ -397,7 +397,7 @@ const translations = {
       "ac-installation": "تركيب التكييف",
       "ac-cleaning": "تنظيف التكييف",
       "washing-machine": "إصلاح الغسالة",
-      "ac-gas-filling": "تعبئة غاز المكيفات",
+      "freon-charging": "شحن فريون",
     },
 
     // Why Choose Us
@@ -512,7 +512,7 @@ const translations = {
         "AC Installation": "تركيب التكييف",
         "AC Cleaning": "تنظيف التكييف",
         "Washing Machine Repair": "إصلاح الغسالة",
-        "AC Gas Filling": "تعبئة غاز المكيفات",
+        "Freon Charging": "شحن فريون",
         Other: "أخرى",
       },
       validation: {
@@ -644,9 +644,9 @@ const translations = {
         shortDesc: "إصلاح سريع لجميع مشاكل الغسالة.",
         fullDesc: "سواء لم تدور الغسالة أو لم تصرف أو لم تعمل إطلاقاً، يمكن لفنيينا التعامل معها. نصلح الغسالات العلوية والأمامية من جميع العلامات التجارية الكبرى باستخدام قطع أصلية مع خدمة موثوقة في نفس اليوم في الرياض.",
       },
-      "ac-gas-filling": {
-        shortDesc: "تعبئة غاز التبريد الاحترافية لجميع أنواع المكيفات مع كشف التسريبات.",
-        fullDesc: "هل مكيفك لا يبرد بشكل صحيح؟ ربما ينقصه غاز التبريد. يقدم فنيونا المعتمدون خدمة تعبئة غاز شاملة للمكيفات المنفصلة ومكيفات النوافذ والأنظمة المركزية. نستخدم غازات R-22 و R-410A و R-32 عالية الجودة مع كشف كامل للتسريبات واختبار الضغط لضمان أداء تبريد مستدام.",
+      "freon-charging": {
+        shortDesc: "شحن فريون احترافي لجميع أنواع المكيفات مع كشف التسريبات.",
+        fullDesc: "هل مكيفك لا يبرد بشكل صحيح؟ ربما تحتاج إلى تعبئة الفريون للمكيفات. نقدم خدمة شحن وتعبئة فريون مكيفات احترافية في الرياض. سواء كنت تحتاج إلى تعبئة فريون مكيف سبليت أو تعبئة فريون مكيف شباك، فنيونا المعتمدون جاهزون. نستخدم فريون مكيف سبليت النقي (R-22, R-410A, R-32) مع كشف التسريبات. اتصل بنا لمعرفة أفضل سعر تعبئة فريون مكيف سبليت مع ضمان الجودة.",
       },
     },
 
@@ -680,13 +680,13 @@ const translations = {
         "إصلاح تسربات المضخة والخراطيم",
         "فحص وإصلاح الضوضاء والاهتزاز",
       ],
-      "ac-gas-filling": [
-        "تعبئة وملء غاز التبريد بالكامل",
-        "كشف التسريبات الرقمي بصبغة الأشعة فوق البنفسجية",
-        "اختبار الضغط قبل وبعد التعبئة",
-        "غازات R-22 و R-410A و R-32 عالية الجودة",
-        "فحص أداء الضاغط",
-        "فحص الأنابيب والوصلات للتسريبات",
+      "freon-charging": [
+        "تعبئة فريون مكيفات شاملة باحترافية",
+        "تعبئة فريون مكيف سبليت بغازات أصلية",
+        "تعبئة فريون مكيف شباك بدقة عالية",
+        "كشف التسريبات قبل تعبئة فريون المكيف",
+        "نقدم أفضل سعر تعبئة فريون مكيف سبليت",
+        "ضمان على تعبئة الفريون للمكيفات",
         "التحقق من أداء التبريد",
         "ضمان غاز لمدة 90 يومًا",
       ],

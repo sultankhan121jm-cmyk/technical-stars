@@ -20,7 +20,8 @@ const Navbar = () => {
   const mobileLinkClass = ({ isActive }) =>
     `flex items-center min-h-[44px] px-4 text-[16px] font-semibold rounded-lg transition-colors ${isActive ? "text-[#EF9F27] bg-white/10" : "text-white hover:text-white/90"}`;
 
-  const serviceSlugs = ["ac-repair", "ac-installation", "ac-cleaning", "washing-machine", "ac-gas-filling"];
+  // UPDATED SLUG HERE
+  const serviceSlugs = ["ac-repair", "ac-installation", "ac-cleaning", "washing-machine", "freon-charging"];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 shadow-lg shadow-black/20" style={{ backgroundColor: "#0A1F3C" }}>

@@ -1,132 +1,98 @@
 import { Link } from "react-router-dom";
-import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import { useLang } from "../contexts/LanguageContext";
-
-// ⚠️ CHANGE THIS to your exact file name! (e.g., "logo.svg" or "tech-stars.png")
 import logo from "../assets/images/logo.png";
 
 const Footer = () => {
-  const { lang } = useLang();
-  const isAr = lang === "ar";
+  const { t, isAr } = useLang();
 
-  const text = {
-    desc: isAr
-      ? "خدمات صيانة منزلية احترافية وسريعة في الرياض. فنيون معتمدون لجميع أعمال التكييف وغسالات الملابس."
-      : "Professional and fast home maintenance services in Riyadh. Certified technicians for all AC and washing machine work.",
-    quickLinks: isAr ? "روابط سريعة" : "Quick Links",
-    home: isAr ? "الرئيسية" : "Home",
-    services: isAr ? "خدماتنا" : "Services",
-    about: isAr ? "من نحن" : "About Us",
-    contact: isAr ? "اتصل بنا" : "Contact Us",
-    topServices: isAr ? "أفضل الخدمات" : "Top Services",
-    acRepair: isAr ? "إصلاح مكيفات" : "AC Repair",
-    acInstall: isAr ? "تركيب مكيفات" : "AC Installation",
-    acClean: isAr ? "تنظيف مكيفات" : "AC Cleaning",
-    washingMachine: isAr ? "غسالات" : "Washing Machine",
-    contactUs: isAr ? "تواصل معنا" : "Contact Us",
-    address: isAr ? "الرياض، المملكة العربية السعودية" : "Riyadh, Saudi Arabia",
-    phone: "+966 556380709",
-    email: "info@technicalstars.online",
-    rights: isAr ? "جميع الحقوق محفوظة" : "All Rights Reserved",
-    company: isAr ? "نجوم التقنية" : "Technical Stars",
-    privacyPolicy: isAr ? "سياسة الخصوصية" : "Privacy Policy",
-  };
+  // Updated slug list
+  const serviceSlugs = ["ac-repair", "ac-installation", "ac-cleaning", "washing-machine", "freon-charging"];
 
   return (
-    <footer className="w-full bg-[#060F1D] text-gray-300 pt-16 pb-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="bg-[#0A1F3C] text-white pt-16 pb-8 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 
-        {/* Column 1: Logo & About */}
-        <div>
-          <Link to="/" className="inline-block">
-            <img
-              src={logo}
-              alt="Technical Stars Logo"
-              className="h-10 w-auto object-contain"
-            />
-          </Link>
-          <p className="mt-4 text-sm leading-relaxed text-gray-400">
-            {text.desc}
-          </p>
-          <div className="mt-6 flex items-center gap-3">
-            <a href="https://wa.me/966556380709" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white flex items-center justify-center transition-all duration-200">
-              <FaWhatsapp />
-            </a>
-            <a href="tel:+966556380709" className="w-10 h-10 rounded-full bg-[#EF9F27]/20 text-[#EF9F27] hover:bg-[#EF9F27] hover:text-white flex items-center justify-center transition-all duration-200">
-              <FaPhoneAlt />
-            </a>
-          </div>
-        </div>
-
-        {/* Column 2: Quick Links */}
-        <div>
-          <h4 className="text-white font-bold text-base mb-5">{text.quickLinks}</h4>
-          <ul className="space-y-3">
-            {[{ to: "/", label: text.home }, { to: "/services", label: text.services }, { to: "/about", label: text.about }, { to: "/contact", label: text.contact }].map((link) => (
-              <li key={link.to}>
-                <Link to={link.to} className="text-sm text-gray-400 hover:text-[#EF9F27] transition-colors duration-200">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Column 3: Top Services */}
-        <div>
-          <h4 className="text-white font-bold text-base mb-5">{text.topServices}</h4>
-          <ul className="space-y-3">
-            {[
-              { to: "/services/ac-repair", label: text.acRepair },
-              { to: "/services/ac-installation", label: text.acInstall },
-              { to: "/services/ac-cleaning", label: text.acClean },
-              { to: "/services/washing-machine", label: text.washingMachine }
-            ].map((link) => (
-              <li key={link.to}>
-                <Link to={link.to} className="text-sm text-gray-400 hover:text-[#EF9F27] transition-colors duration-200">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Column 4: Contact Info */}
-        <div>
-          <h4 className="text-white font-bold text-base mb-5">{text.contactUs}</h4>
-          <ul className="space-y-4">
-            <li className="flex items-start gap-3">
-              <FaMapMarkerAlt className="text-[#EF9F27] mt-1 flex-shrink-0" />
-              <a
-                href="https://maps.google.com/?q=24.818361,46.656472"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-gray-400 hover:text-[#EF9F27] transition-colors"
-              >
-                24°49'06.1"N 46°39'23.3"E
+          {/* Column 1: Brand & About */}
+          <div className="lg:col-span-1">
+            <Link to="/" className="flex items-center gap-3 mb-6">
+              <img src={logo} alt="Technical Stars" width="40" height="40" className="h-10 w-auto object-contain" />
+              <span className="text-xl font-bold text-white">Technical Stars</span>
+            </Link>
+            <p className="text-white/60 text-sm leading-relaxed mb-6">
+              {t("footer.tagline")}
+            </p>
+            <div className="flex gap-3">
+              <a href="tel:+966556380709" className="bg-white/5 hover:bg-[#EF9F27] transition-colors duration-300 w-10 h-10 rounded-full flex items-center justify-center text-white">
+                <FaPhone className="text-sm" />
               </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <FaPhoneAlt className="text-[#EF9F27] flex-shrink-0" />
-              <a href="tel:+966556380709" className="text-sm text-gray-400 hover:text-[#EF9F27] transition-colors" dir="ltr">+966556380709</a>
-            </li>
-            <li className="flex items-center gap-3">
-              <FaEnvelope className="text-[#EF9F27] flex-shrink-0" />
-              <a href="mailto:info@technicalstars.online" className="text-sm text-gray-400 hover:text-[#EF9F27] transition-colors">{text.email}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+              <a href="https://wa.me/966556380709" target="_blank" rel="noopener noreferrer" className="bg-white/5 hover:bg-[#EF9F27] transition-colors duration-300 w-10 h-10 rounded-full flex items-center justify-center text-white">
+                <FaWhatsapp className="text-sm" />
+              </a>
+            </div>
+          </div>
 
-      {/* Bottom Bar */}
-      <div className="mt-12 pt-8 border-t border-gray-800 max-w-7xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 pb-4">
-        <p>© {new Date().getFullYear()} {text.company}. {text.rights}.</p>
-        <div className="flex items-center gap-4">
-          <Link
-            to="/privacy-policy"
-            className="text-gray-500 hover:text-[#EF9F27] transition-colors duration-200 block sm:inline whitespace-nowrap"
-          >
-            {text.privacyPolicy}
+          {/* Column 2: Quick Links */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 text-white">{t("footer.quickLinks")}</h3>
+            <ul className="space-y-3">
+              <li><Link to="/" className="text-white/60 hover:text-[#EF9F27] transition-colors text-sm">{t("nav.home")}</Link></li>
+              <li><Link to="/about" className="text-white/60 hover:text-[#EF9F27] transition-colors text-sm">{t("nav.about")}</Link></li>
+              <li><Link to="/services" className="text-white/60 hover:text-[#EF9F27] transition-colors text-sm">{t("nav.services")}</Link></li>
+              <li><Link to="/contact" className="text-white/60 hover:text-[#EF9F27] transition-colors text-sm">{t("nav.contact")}</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Top Services (Updated dynamically) */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 text-white">{t("footer.ourServices")}</h3>
+            <ul className="space-y-3">
+              {serviceSlugs.map((slug) => (
+                <li key={slug}>
+                  <Link
+                    to={`/services/${slug}`}
+                    className="text-white/60 hover:text-[#EF9F27] transition-colors text-sm capitalize"
+                  >
+                    {t(`services.${slug}`)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact Info */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 text-white">{t("footer.contactUs")}</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <FaMapMarkerAlt className="text-[#EF9F27] text-md mt-1 flex-shrink-0" />
+                <span className="text-white/60 text-sm">{t("contact.location")}</span>
+              </li>
+              <li>
+                <a href="tel:+966556380709" className="flex items-start gap-3 group">
+                  <FaPhone className="text-[#EF9F27] text-md mt-1 flex-shrink-0" />
+                  <span className="text-white/60 group-hover:text-[#EF9F27] transition-colors text-sm">+966 55 638 0709</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@technicalstars.online" className="flex items-start gap-3 group">
+                  <FaEnvelope className="text-[#EF9F27] text-md mt-1 flex-shrink-0" />
+                  <span className="text-white/60 group-hover:text-[#EF9F27] transition-colors text-sm">info@technicalstars.online</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-white/40 text-sm text-center md:text-right">
+            © {new Date().getFullYear()} Technical Stars. {t("footer.allRights")}
+          </p>
+          <Link to="/privacy-policy" className="text-white/40 hover:text-[#EF9F27] transition-colors text-sm">
+            Privacy Policy
           </Link>
         </div>
       </div>

@@ -30,7 +30,7 @@ import washingImg3 from "../assets/images/service-washing-machine-3.jpg";
 import gasFillingImg2 from "../assets/images/service-ac-gas-filling-2.jpg";
 import gasFillingImg3 from "../assets/images/service-ac-gas-filling-3.jpg";
 
-// --- IMAGE MAP (complete — all slugs covered) ---
+// --- IMAGE MAP (updated with new slug) ---
 const serviceImages = {
   'ac-repair': acRepairImg,
   'ac-installation': acInstallImg,
@@ -38,7 +38,7 @@ const serviceImages = {
   'washing-machine': washingImg,
   'central-ac-cleaning': centralAcCleanImg,
   'window-ac-cleaning': windowAcCleanImg,
-  'ac-gas-filling': gasFillingImg,
+  'freon-charging': gasFillingImg, // <-- SLUG UPDATED
 };
 
 const defaultServiceImg = acRepairImg;
@@ -81,15 +81,15 @@ const promoConfig = {
     promoTitle: { en: "Window AC Special", ar: "عرض مكيف النافذة" },
     promoDesc: { en: "Get 30% OFF window AC cleaning!", ar: "احصل على خصم 30% على تنظيف مكيف النافذة!" },
   },
-  'ac-gas-filling': {
+  'freon-charging': { // <-- SLUG UPDATED
     show: true, discount: '30%', showLocalProof: true,
-    localProof: { en: "Fast AC Gas Filling Service in North Riyadh", ar: "خدمة تعبئة غاز المكيفات السريعة في شمال الرياض" },
-    promoTitle: { en: "Gas Filling Offer", ar: "عرض تعبئة الغاز" },
-    promoDesc: { en: "Get 30% OFF your first AC gas refill!", ar: "احصل على خصم 30% على أول تعبئة غاز مكيف!" },
+    localProof: { en: "Fast AC Freon Charging in North Riyadh", ar: "خدمة شحن فريون سريعة في شمال الرياض" },
+    promoTitle: { en: "Freon Charging Offer", ar: "عرض شحن وتعبئة الفريون" },
+    promoDesc: { en: "Get 30% OFF your first freon refill!", ar: "احصل على خصم 30% على أول شحن فريون!" },
   },
 };
 
-// --- NEW: EXTENDED FEATURES MAP (Guarantees 6 lines & Rich Keywords) ---
+// --- EXTENDED FEATURES MAP ---
 const dynamicFeatures = {
   'ac-cleaning': [
     { en: "Deep washing of split AC indoor units", ar: "غسيل عميق لوحدات مكيفات سبليت الداخلية" },
@@ -139,17 +139,17 @@ const dynamicFeatures = {
     { en: "Mold and bacteria sanitization", ar: "تعقيم وإزالة العفن والبكتيريا" },
     { en: "Reassembly and cooling efficiency test", ar: "إعادة التجميع واختبار كفاءة التبريد" }
   ],
-  'ac-gas-filling': [
-    { en: "AC gas refill and refrigerant top-up (Freon)", ar: "تعبئة غاز المكيف وشحن الفريون" },
-    { en: "UV dye leak detection for hidden AC leaks", ar: "كشف التسريبات المخفية باستخدام الصبغة" },
-    { en: "Pressure testing and system vacuuming", ar: "اختبار الضغط وتفريغ النظام" },
-    { en: "Compressor oil check and topping up", ar: "فحص زيت الضاغط وتعبئته" },
-    { en: "Fixing copper pipe connections and valves", ar: "إصلاح توصيلات النحاس والصمامات" },
-    { en: "Cooling efficiency verification and check", ar: "التحقق من كفاءة التبريد واختبار الأداء" }
+  'freon-charging': [ // <-- SLUG UPDATED
+    { en: "Professional freon charging for AC units", ar: "تعبئة الفريون للمكيفات بشحنات غاز أصلية ومضمونة" },
+    { en: "Precise freon refill for split ACs", ar: "متخصصون في تعبئة فريون مكيف سبليت وتوفير فريون مكيف سبليت النقي" },
+    { en: "Window AC freon charging service", ar: "خدمة تعبئة فريون مكيف شباك بأعلى معايير الجودة" },
+    { en: "UV dye leak detection before refilling", ar: "كشف التسريبات بالأشعة فوق البنفسجية قبل شحن الفريون" },
+    { en: "System vacuuming and pressure testing", ar: "تفريغ النظام واختبار الضغط قبل التعبئة" },
+    { en: "Best split AC freon refill price", ar: "نقدم أفضل سعر تعبئة فريون مكيف سبليت في الرياض مع ضمان" }
   ]
 };
 
-// --- UPDATED DYNAMIC SEO TEXT MAP ---
+// --- DYNAMIC SEO TEXT MAP ---
 const dynamicSeoText = {
   'ac-cleaning': {
     includedTitle: { en: "What Our AC Cleaning Service Includes", ar: "ما تتضمنه خدمة تنظيف المكيفات لدينا" },
@@ -191,15 +191,15 @@ const dynamicSeoText = {
     step2: { en: "Fix & Replace", ar: "الإصلاح والاستبدال", desc_en: "We perform the washing machine repair, replacing any faulty parts with original spares.", desc_ar: "نقوم بإصلاح الغسالة، واستبدال أي قطع معطلة بقطع غيار أصلية." },
     step3: { en: "Final Test Run", ar: "اختبار التشغيل", desc_en: "We run a full wash cycle to ensure the maintenance is successful and the machine works perfectly.", desc_ar: "نشغل دورة غسيل كاملة لضمان نجاح الصيانة وعمل الغسالة بشكل مثالي." }
   },
-  'ac-gas-filling': {
-    includedTitle: { en: "What Our AC Gas Filling Includes", ar: "ما تتضمنه خدمة تعبئة غاز المكيفات" },
-    brandsText: { en: "Experts in AC gas refill and leak repair for all models in Riyadh.", ar: "خبراء في تعبئة غاز المكيفات وإصلاح التسريبات لجميع الموديلات في الرياض." },
-    fastDesc: { en: "AC gas filling technician in Riyadh within 60 minutes", ar: "فني تعبئة غاز مكيفات في الرياض خلال 60 دقيقة" },
-    expertDesc: { en: "Certified professionals for fast and safe AC gas refill.", ar: "محترفون معتمدون لتعبئة غاز المكيفات بسرعة وأمان." },
-    processTitle: { en: "Our AC Gas Refill Process", ar: "عملية تعبئة غاز المكيفات لدينا" },
-    step1: { en: "Leak Detection", ar: "كشف التسريب", desc_en: "Our technician checks the AC for gas leaks using UV dye before refilling the refrigerant.", desc_ar: "يفحص الفني المكيف للبحث عن تسريبات الغاز باستخدام الصبغة قبل إعادة التعبئة." },
-    step2: { en: "Vacuum & Refill", ar: "تفريغ وتعبئة", desc_en: "We vacuum the system and refill the AC gas to optimal pressure levels for perfect cooling.", desc_ar: "نفرغ النظام ونعيد تعبئة غاز المكيف إلى مستويات الضغط المثالية لتبريد مثالي." },
-    step3: { en: "Performance Check", ar: "فحص الأداء", desc_en: "We test the AC cooling efficiency to ensure the gas refill was successful.", desc_ar: "نختبر كفاءة تبريد المكيف للتأكد من نجاح تعبئة الغاز." }
+  'freon-charging': { // <-- SLUG UPDATED
+    includedTitle: { en: "What Our Freon Charging Service Includes", ar: "ما تتضمنه خدمة شحن وتعبئة فريون المكيفات" },
+    brandsText: { en: "Experts in AC freon refill and leak repair for all models in Riyadh.", ar: "خبراء في تعبئة فريون مكيفات وإصلاح التسريبات لجميع الموديلات في الرياض." },
+    fastDesc: { en: "AC freon charging technician in Riyadh within 60 minutes", ar: "فني شحن وتعبئة فريون مكيفات في الرياض خلال 60 دقيقة" },
+    expertDesc: { en: "Certified professionals for fast and safe AC freon refill.", ar: "محترفون معتمدون لتعبئة الفريون للمكيفات بسرعة وأمان." },
+    processTitle: { en: "Our AC Freon Refill Process", ar: "عملية شحن وتعبئة فريون المكيف لدينا" },
+    step1: { en: "Leak Detection", ar: "كشف التسريب", desc_en: "Our technician checks the AC for gas leaks using UV dye before refilling the freon.", desc_ar: "يفحص الفني المكيف للبحث عن تسريبات الغاز باستخدام الصبغة قبل البدء في تعبئة فريون المكيف." },
+    step2: { en: "Vacuum & Refill", ar: "تفريغ وتعبئة", desc_en: "We vacuum the system and refill the freon to optimal pressure levels for perfect cooling.", desc_ar: "نفرغ النظام ونعيد تعبئة فريون مكيف سبليت أو الشباك إلى مستويات الضغط المثالية لتبريد مثالي." },
+    step3: { en: "Performance & Price Check", ar: "فحص الأداء والسعر", desc_en: "We test the cooling efficiency and ensure you get the best price for split AC freon refill.", desc_ar: "نختبر كفاءة التبريد ونضمن لك أفضل سعر تعبئة فريون مكيف سبليت دون أي مبالغة." }
   },
   'central-ac-cleaning': {
     includedTitle: { en: "What Our Central AC Cleaning Includes", ar: "ما تتضمنه خدمة تنظيف المكيفات المركزية" },
@@ -223,7 +223,7 @@ const dynamicSeoText = {
   }
 };
 
-// --- UPDATED GALLERY CONFIG MAP ---
+// --- GALLERY CONFIG MAP ---
 const galleryConfig = {
   'ac-repair': {
     title: { en: "Professional AC Repair in Action", ar: "إصلاح المكيفات الاحترافي أثناء العمل" },
@@ -253,11 +253,11 @@ const galleryConfig = {
       { img: washingImg3, title: { en: "Water Leak & Drain Fixing", ar: "إصلاح تسربات الماء والتصريف" }, desc: { en: "Locating and fixing water leaks, replacing pumps, and clearing blocked drain hoses. We fix all automatic washing machine issues.", ar: "تحديد موقع وإصلاح تسربات الماء واستبدال المضخات وتنظيف خراطيم الصرف المسدودة. نصلح جميع مشاكل الغسالات الأوتوماتيكية." }, alt: "Fixing washing machine water leak and drain pump" }
     ]
   },
-  'ac-gas-filling': {
-    title: { en: "AC Gas Refill Process", ar: "عملية تعبئة غاز المكيفات" },
+  'freon-charging': { // <-- SLUG UPDATED
+    title: { en: "AC Freon Refill Process", ar: "عملية شحن وتعبئة فريون المكيفات" },
     cards: [
-      { img: gasFillingImg2, title: { en: "Leak Detection & Gas Hookup", ar: "كشف التسريبات وتوصيل الغاز" }, desc: { en: "Connecting refrigerant cylinders and using UV dye to detect hidden leaks in the AC system before refilling the gas.", ar: "توصيل أسطوانات غاز التبريد واستخدام الصبغة الفوق بنفسجية لكشف التسريبات المخفية في نظام التكييف قبل إعادة تعبئة الغاز." }, alt: "AC gas filling and leak detection with UV dye" },
-      { img: gasFillingImg3, title: { en: "Pressure Testing & Verification", ar: "اختبار الضغط والتحقق" }, desc: { en: "Monitoring pressure gauges during and after gas filling to ensure optimal refrigerant levels for your AC.", ar: "مراقبة مقاييس الضغط أثناء وبعد تعبئة الغاز لضمان مستويات مبرد مثالية لمكيفك." }, alt: "Checking AC pressure gauges after gas refill" }
+      { img: gasFillingImg2, title: { en: "Split AC Freon Refill", ar: "تعبئة فريون مكيف سبليت" }, desc: { en: "Professional freon refill for split ACs to restore cooling. We offer the best split AC freon refill price in Riyadh.", ar: "تعبئة فريون مكيف سبليت احترافية لاستعادة التبريد. نقدم أفضل سعر تعبئة فريون مكيف سبليت في الرياض مع ضمان الجودة." }, alt: "Technician refilling split AC freon in Riyadh" },
+      { img: gasFillingImg3, title: { en: "Window AC Freon Charging", ar: "تعبئة فريون مكيف شباك" }, desc: { en: "Complete window AC freon charging and leak repair. We ensure your window unit cools perfectly.", ar: "تعبئة فريون مكيف شباك شاملة وإصلاح التسريبات. نضمن لمكيف النافذة لديك التبريد المثالي باستخدام فريون أصلي." }, alt: "Window AC freon charging service in Riyadh" }
     ]
   }
 };
@@ -303,12 +303,17 @@ const ServiceDetailPage = ({ slug }) => {
   const Icon = serviceIconMap[service.iconName] || FaWrench;
 
   const fullDesc = getLocalized(service.fullDesc, lang);
+  const serviceTitle = getLocalized(service.title, lang); // Get title directly from services.js
 
   // Use dynamic 6-item features if available, otherwise fallback to default data
   const rawFeatures = dynamicFeatures[slug] || getLocalized(service.features, lang);
   const safeFeatures = Array.isArray(rawFeatures) ? rawFeatures.map(f => getLocalized(f, lang)) : [];
 
   const currentSeo = dynamicSeoText[slug] || {};
+
+  // Since the slug is updated, we can just use the title from services.js directly
+  const displayServiceTitle = serviceTitle;
+  const displaySlugName = serviceTitle;
 
   const staticText = {
     home: isAr ? "الرئيسية" : "Home",
@@ -354,7 +359,7 @@ const ServiceDetailPage = ({ slug }) => {
               <span className="mx-2">&gt;</span>
               <Link to="/services" className="hover:underline">{staticText.services}</Link>
               <span className="mx-2">&gt;</span>
-              <span className="text-white/60 capitalize">{slug.replace(/-/g, ' ')}</span>
+              <span className="text-white/60 capitalize">{displaySlugName}</span>
             </nav>
 
             {showLocalProof && (
@@ -374,7 +379,7 @@ const ServiceDetailPage = ({ slug }) => {
               >
                 <Icon className="text-white text-3xl" />
               </motion.div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">{service.title}</h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">{displayServiceTitle}</h1>
             </div>
 
             <p className="text-base md:text-lg text-brand-light/90 leading-relaxed max-w-xl mb-8">{fullDesc}</p>
@@ -427,10 +432,9 @@ const ServiceDetailPage = ({ slug }) => {
               animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="relative"
             >
-              {/* Added width, height, fetchpriority, and loading=eager for LCP fix */}
               <img
                 src={heroImage}
-                alt={isAr ? `${service.title} في الرياض` : `${service.title} in Riyadh`}
+                alt={isAr ? `${displayServiceTitle} في الرياض` : `${displayServiceTitle} in Riyadh`}
                 width={1200}
                 height={896}
                 loading="eager"
@@ -540,7 +544,6 @@ const ServiceDetailPage = ({ slug }) => {
                   whileHover={{ y: -10 }}
                   className="group relative overflow-hidden rounded-3xl shadow-xl cursor-pointer h-[450px] md:h-[550px]"
                 >
-                  {/* Added width and height to fix CLS */}
                   <img
                     src={card.img}
                     alt={card.alt}
